@@ -8,19 +8,19 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        homeBtn.onClick.AddListener(delegate () {
+        if (homeBtn) homeBtn.onClick.AddListener(delegate () {
             SceneManager.LoadScene(0);
         });
 
-        nextBtn.onClick.AddListener(delegate () {
+        if (nextBtn) nextBtn.onClick.AddListener(delegate () {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         });
 
-        backBtn.onClick.AddListener(delegate () {
+        if (backBtn) backBtn.onClick.AddListener(delegate () {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         });
 
-        quitBtn.onClick.AddListener(delegate () {
+        if (quitBtn) quitBtn.onClick.AddListener(delegate () {
             Application.Quit();
         });
     }
