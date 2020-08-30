@@ -448,6 +448,7 @@ MonoBehaviour:
   dressMaiko: {fileID: 397049324}
   dressGeisha: {fileID: 1738610823}
   dressOiran: {fileID: 640585667}
+  model: {fileID: 1264368813}
 --- !u!4 &385866477
 Transform:
   m_ObjectHideFlags: 0
@@ -631,7 +632,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 586211873}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 767, y: 374.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1084,7 +1085,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 767, y: 374.5, z: -26.550205}
+  m_LocalPosition: {x: 0, y: 0, z: -26.550205}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1215,6 +1216,25 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1513773898}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1264368813 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9069af4a18aef314b8563ab4f3e7a41d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1513773898}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1264368814
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264368813}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1.16, z: 0}
 --- !u!1001 &1513773898
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1225,12 +1245,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 9069af4a18aef314b8563ab4f3e7a41d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 766.7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9069af4a18aef314b8563ab4f3e7a41d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 367.8
+      value: -6.91
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9069af4a18aef314b8563ab4f3e7a41d,
         type: 3}
@@ -1346,6 +1366,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: geisha22.08.20
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9069af4a18aef314b8563ab4f3e7a41d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Model
       objectReference: {fileID: 0}
     - target: {fileID: 1743227899681466406, guid: 9069af4a18aef314b8563ab4f3e7a41d,
         type: 3}

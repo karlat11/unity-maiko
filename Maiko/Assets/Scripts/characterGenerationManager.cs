@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using TMPro;
 using UnityEngine.UI;
 using System;
 
@@ -14,12 +13,16 @@ public class characterGenerationManager : MonoBehaviour
     public GameObject hairMaiko, hairGeisha, hairOiran;
     public GameObject makeupMaiko, makeupGeisha, makeupOiran;
     public GameObject dressMaiko, dressGeisha, dressOiran;
+    public GameObject model;
 
     private int[] idList;
     private int currentId;
     private GameObject[] hairList, makeupList, dressList, currentList;
     private GameObject[][] lists;
     private Button[] btnList;
+    private bool pressedModel;
+    private Vector3 hitPos;
+    private float dist = 0;
 
     void Start()
     {
@@ -60,6 +63,8 @@ public class characterGenerationManager : MonoBehaviour
 
         currentList = lists[0];
         currentId = idList[0];
+
+        pressedModel = false;
 
         hairBtn.onClick.AddListener(delegate () {
             currentList = lists[0];
@@ -113,5 +118,35 @@ public class characterGenerationManager : MonoBehaviour
         });
 
         hairBtn.onClick.Invoke();
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit rayHit;
+
+            if (Physics.Raycast(ray, out rayHit))
+            {
+                if (rayHit.collider.tag == "Model")
+                {
+                    pressedModel = true;
+                    hitPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.z);
+                }
+            }
+        }
+
+        if (Input.GetMouseButtonUp(0)) pressedModel = false;
+
+        if (pressedModel)
+        {
+            if (dist != (hitPos.x - Input.mousePosition.x))
+            {
+                dist = hitPos.x - Input.mousePosition.x;
+                model.transform.Rotate(0, model.transform.rotation.y + dist/2, 0);
+                hitPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.z);
+            }
+        }
     }
 }
