@@ -43,5 +43,12 @@ public class playerControlManager : MonoBehaviour
                 agent.angularSpeed = 700f;
             }
         }
+
+        if (!agent.pathPending &&
+            agent.remainingDistance <= agent.stoppingDistance &&
+            (!agent.hasPath || agent.velocity.sqrMagnitude == 0f))
+        {
+            animator.Play("Base Layer.idle");
+        }
     }
 }
