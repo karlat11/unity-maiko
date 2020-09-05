@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System;
+using System.Collections;
+using TMPro;
 
 public class characterGenerationManager : MonoBehaviour
 {
@@ -14,18 +16,34 @@ public class characterGenerationManager : MonoBehaviour
     public GameObject makeupMaiko, makeupGeisha, makeupOiran;
     public GameObject dressMaiko, dressGeisha, dressOiran;
     public GameObject model;
+    public GameObject popUpPanel;
+
+    public textCreator TextCreator;
+
+    public TextMeshProUGUI copy;
 
     private int[] idList;
     private int currentId;
+    private int initialPopUpDelay = 1;
+
     private GameObject[] hairList, makeupList, dressList, currentList;
     private GameObject[][] lists;
+
     private Button[] btnList;
+
     private bool pressedModel;
+    private bool hairPopUpDisplayed, makeupPopUpDisplayed, kimonoPopUpDisplayed = false;
+    
     private Vector3 hitPos;
+
     private float dist = 0;
+
+    private IEnumerator coroutine;
 
     void Start()
     {
+        popUpPanel.SetActive(false);
+        coroutine = delayInitialPopUp();
 
         hairList = new GameObject[] {
             hairMaiko,
@@ -78,6 +96,8 @@ public class characterGenerationManager : MonoBehaviour
 
             foreach (Button btn in btnList) btn.interactable = true;
             makeupBtn.interactable = false;
+
+            if (!makeupPopUpDisplayed) makeupPopUpDisplayed = DisplayPopUp(makeupPopUpDisplayed, TextCreator.sentences[1]);
         });
 
         dressBtn.onClick.AddListener(delegate () {
@@ -85,6 +105,8 @@ public class characterGenerationManager : MonoBehaviour
 
             foreach (Button btn in btnList) btn.interactable = true;
             dressBtn.interactable = false;
+
+            if (!kimonoPopUpDisplayed) kimonoPopUpDisplayed = DisplayPopUp(kimonoPopUpDisplayed, TextCreator.sentences[2]);
         });
 
         nextBtn.onClick.AddListener(delegate () {
@@ -118,6 +140,7 @@ public class characterGenerationManager : MonoBehaviour
         });
 
         hairBtn.onClick.Invoke();
+        StartCoroutine(coroutine);
     }
 
     private void Update()
@@ -148,5 +171,20 @@ public class characterGenerationManager : MonoBehaviour
                 hitPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.z);
             }
         }
+    }
+
+    IEnumerator delayInitialPopUp()
+    {
+        yield return new WaitForSeconds(initialPopUpDelay);
+        popUpPanel.SetActive(true);
+        hairPopUpDisplayed = true;
+        StopCoroutine(coroutine);
+    }
+
+    bool DisplayPopUp(bool checkBool, string text)
+    {
+        copy.text = text;
+        popUpPanel.SetActive(true);
+        return checkBool = true;
     }
 }
