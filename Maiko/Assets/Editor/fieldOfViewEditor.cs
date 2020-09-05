@@ -20,6 +20,7 @@ public class fieldOfViewEditor : Editor
         foreach(Transform visibleTargets in fov.visibleTargets)
         {
             Handles.DrawLine(fov.transform.position, visibleTargets.position);
+            Debug.Log("Found the target!");
         }
     }
 }
