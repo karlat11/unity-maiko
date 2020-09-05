@@ -30,7 +30,7 @@ public class UIManager : MonoBehaviour
             popUpPanel.SetActive(true);
         });
 
-        if ((closePopUp != null || closePopUp.Length != 0) && popUpPanel)
+        if ((closePopUp != null && closePopUp.Length != 0) && popUpPanel)
         {
             foreach (Button btn in closePopUp)
             {
