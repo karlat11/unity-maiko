@@ -350,7 +350,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bb582bb7ffa1824db7b78968fe621e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meshRes: 1
   viewRad: 4.26
+  edgeDistThreshold: 0.5
   viewAngle: 86
   targetMask:
     serializedVersion: 2
@@ -358,8 +360,8 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 512
-  meshRes: 1
   viewMeshFilter: {fileID: 1434589658}
+  edgeResolveIterations: 4
 --- !u!136 &217416641
 CapsuleCollider:
   m_ObjectHideFlags: 0
