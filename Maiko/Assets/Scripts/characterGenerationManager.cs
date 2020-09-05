@@ -11,33 +11,24 @@ public class characterGenerationManager : MonoBehaviour
     public Button hairBtn;
     public Button makeupBtn;
     public Button dressBtn;
-
     public GameObject hairMaiko, hairGeisha, hairOiran;
     public GameObject makeupMaiko, makeupGeisha, makeupOiran;
     public GameObject dressMaiko, dressGeisha, dressOiran;
     public GameObject model;
     public GameObject popUpPanel;
-
     public textCreator TextCreator;
-
     public TextMeshProUGUI copy;
 
     private int[] idList;
     private int currentId;
     private int initialPopUpDelay = 1;
-
     private GameObject[] hairList, makeupList, dressList, currentList;
     private GameObject[][] lists;
-
     private Button[] btnList;
-
     private bool pressedModel;
     private bool hairPopUpDisplayed, makeupPopUpDisplayed, kimonoPopUpDisplayed = false;
-    
     private Vector3 hitPos;
-
     private float dist = 0;
-
     private IEnumerator coroutine;
 
     void Start()
