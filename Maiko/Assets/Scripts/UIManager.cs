@@ -4,7 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    public Button homeBtn, nextBtn, backBtn, quitBtn;
+    public Button homeBtn, nextBtn, backBtn, quitBtn, closePopUpBtn, openPopUpBtn;
+    public GameObject popUpPanel;
 
     private void Start()
     {
@@ -22,6 +23,14 @@ public class UIManager : MonoBehaviour
 
         if (quitBtn) quitBtn.onClick.AddListener(delegate () {
             Application.Quit();
+        });
+
+        if (openPopUpBtn && popUpPanel) openPopUpBtn.onClick.AddListener(delegate () {
+            popUpPanel.SetActive(true);
+        });
+
+        if (closePopUpBtn && popUpPanel) closePopUpBtn.onClick.AddListener(delegate () {
+            popUpPanel.SetActive(false);
         });
     }
 
