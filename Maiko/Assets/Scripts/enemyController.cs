@@ -19,6 +19,17 @@ public class enemyController : MonoBehaviour
             {
                 if (animator != null) animator.Play("Base Layer.found");
                 targetVisible = true;
+
+                foreach (Transform target in fov.visibleTargets)
+                {
+                    playerControlManager targetManager = target.GetComponent<playerControlManager>();
+                    if (!targetManager.detected)
+                    {
+                        targetManager.detected = true;
+                        targetManager.enemyToFace = transform;
+                        transform.LookAt(target);
+                    }
+                }
             }
         }
 
@@ -28,6 +39,12 @@ public class enemyController : MonoBehaviour
             {
                 targetVisible = false;
                 if (animator != null) animator.Play("Base Layer.coolDown");
+
+                foreach (Transform target in fov.visibleTargets)
+                {
+                    playerControlManager targetManager = target.GetComponent<playerControlManager>();
+                    if (targetManager.detected) targetManager.detected = false;
+                }
             }
         }
     }

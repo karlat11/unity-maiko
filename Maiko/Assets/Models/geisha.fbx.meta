@@ -4,6 +4,9 @@ ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
+      74: -3159536794421495178
+    second: rig|foundme
+  - first:
       74: -7361427651036151181
     second: rig|Idle
   - first:
@@ -18,6 +21,9 @@ ModelImporter:
   - first:
       74: -7013671774237534584
     second: rig|walkienotmuchtalkie
+  - first:
+      74: 7943917218726277205
+    second: hair.oiran.001|sneakycheeky
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -47,6 +53,35 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
+      name: rig|foundme
+      takeName: rig|foundme
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 57
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
       name: rig|Idle
       takeName: rig|Idle
       internalID: 0
@@ -58,7 +93,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -116,7 +151,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -168,6 +203,35 @@ ModelImporter:
       internalID: 0
       firstFrame: 0
       lastFrame: 39
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: hair.oiran.001|sneakycheeky
+      takeName: hair.oiran.001|sneakycheeky
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 97
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

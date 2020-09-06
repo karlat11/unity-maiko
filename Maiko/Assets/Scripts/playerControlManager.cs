@@ -1,21 +1,32 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.AI;
 
 public class playerControlManager : MonoBehaviour
 {
+    [HideInInspector]
+    public bool detected = false;
+    [HideInInspector]
+    public Transform enemyToFace;
+    public GameObject popUpPanel;
 
     private NavMeshAgent agent;
     private Animator animator;
-    private bool detected;
+    private AnimatorStateInfo state;
+    private int initialPopUpDelay = 5;
+    private IEnumerator coroutine;
 
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        coroutine = delayInitialPopUp();
     }
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        state = animator.GetCurrentAnimatorStateInfo(0);
+
+        if (Input.GetMouseButtonDown(0) && !detected)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -30,7 +41,7 @@ public class playerControlManager : MonoBehaviour
             }
         }
         
-        else if (Input.GetMouseButtonDown(1))
+        else if (Input.GetMouseButtonDown(1) && !detected)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -47,9 +58,28 @@ public class playerControlManager : MonoBehaviour
 
         if (!agent.pathPending &&
             agent.remainingDistance <= agent.stoppingDistance &&
-            (!agent.hasPath || agent.velocity.sqrMagnitude == 0f))
+            (!agent.hasPath || agent.velocity.sqrMagnitude == 0f) &&
+            !detected)
         {
-            animator.Play("Base Layer.idle");
+            if (!state.IsName("idle")) animator.Play("Base Layer.idle");
         }
+
+        if (detected)
+        {
+            if (!state.IsName("found"))
+            {
+                animator.Play("Base Layer.found");
+                transform.LookAt(enemyToFace);
+                agent.isStopped = true;
+                StartCoroutine(coroutine);
+            }
+        }
+    }
+
+    IEnumerator delayInitialPopUp()
+    {
+        yield return new WaitForSeconds(initialPopUpDelay);
+        popUpPanel.SetActive(true);
+        StopCoroutine(coroutine);
     }
 }
