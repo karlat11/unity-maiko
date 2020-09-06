@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Geisha
   - Model
+  - Locked
   layers:
   - Default
   - TransparentFX
