@@ -7,6 +7,8 @@ public class playerControlManager : MonoBehaviour
     [HideInInspector]
     public bool detected = false;
     [HideInInspector]
+    public bool sneaking = false;
+    [HideInInspector]
     public Transform enemyToFace;
     public GameObject popUpPanel;
 
@@ -38,6 +40,7 @@ public class playerControlManager : MonoBehaviour
                 agent.SetDestination(hit.point);
                 agent.speed = 1.75f;
                 agent.angularSpeed = 700f;
+                sneaking = false;
             }
         }
         
@@ -53,6 +56,7 @@ public class playerControlManager : MonoBehaviour
                 agent.SetDestination(hit.point);
                 agent.speed = 1f;
                 agent.angularSpeed = 700f;
+                sneaking = true;
             }
         }
 

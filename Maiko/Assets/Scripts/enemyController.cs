@@ -25,8 +25,8 @@ public class enemyController : MonoBehaviour
                     playerControlManager targetManager = target.GetComponent<playerControlManager>();
                     if (!targetManager.detected)
                     {
-                        targetManager.detected = true;
                         targetManager.enemyToFace = transform;
+                        targetManager.detected = true;
                         transform.LookAt(target);
                     }
                 }
