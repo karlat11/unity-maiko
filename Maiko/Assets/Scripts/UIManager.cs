@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
     public Button homeBtn, nextBtn, backBtn, quitBtn, openPopUpBtn;
     public Button[] closePopUp;
     public GameObject popUpPanel;
+    public string levelId;
 
     private void Start()
     {
@@ -41,4 +42,8 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void LoadLevel()
+    {
+        SceneManager.LoadScene(levelId);
+    }
 }

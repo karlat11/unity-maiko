@@ -525,7 +525,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 276083025}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 385866478}
+        m_MethodName: LoadLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &276083025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -780,12 +791,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   homeBtn: {fileID: 0}
-  nextBtn: {fileID: 276083024}
+  nextBtn: {fileID: 0}
   backBtn: {fileID: 1799912712}
   quitBtn: {fileID: 0}
   openPopUpBtn: {fileID: 0}
   closePopUp: []
   popUpPanel: {fileID: 0}
+  levelId: 
 --- !u!1 &388949042
 GameObject:
   m_ObjectHideFlags: 0
@@ -1653,6 +1665,7 @@ MonoBehaviour:
     girls as new members of her group and provides them with trainings for Geisha,
     assassins and Miko (priestesses) to ensure their good cover and easy access to
     most spaces and events.
+  levelName: level1_screen
 --- !u!1 &1078531084
 GameObject:
   m_ObjectHideFlags: 0
@@ -1867,6 +1880,7 @@ MonoBehaviour:
     Chiyome. Suffering great loses, the feudal lord Takeda Shingen approaches widowed
     Chiyome and tasks her with the mission of creating an underground kunoichi (female
     ninja) network to serve as spies and espionage agents.
+  levelName: level1_screen
 --- !u!1 &1176291206
 GameObject:
   m_ObjectHideFlags: 0
@@ -2299,6 +2313,7 @@ MonoBehaviour:
   - "The year 1561 is coming to an end. Most of the Kunoichi are now ready to complete
     their training before starting solo missions. There\u2019s just one final test
     before that happens\u2026"
+  levelName: level1_screen
 --- !u!1 &1799912710
 GameObject:
   m_ObjectHideFlags: 0

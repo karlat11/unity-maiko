@@ -6,12 +6,14 @@ public class levelSelectionManager : MonoBehaviour
 {
     public GameObject btns;
     public TextMeshProUGUI briefing;
-
+    
     private int levelsUnlocked;
     private Button[] levelBtns;
+    private UIManager uiManag;
 
     private void Start()
     {
+        uiManag = GetComponent<UIManager>();
         levelBtns = btns.GetComponentsInChildren<Button>();
         levelsUnlocked = 3;
 
@@ -36,7 +38,11 @@ public class levelSelectionManager : MonoBehaviour
 
                 btn.onClick.AddListener(delegate () {
                     changeSelectedLvl(btn, bCreator.sentences);
+                    uiManag.levelId = bCreator.levelName;
                 });
+
+                //btn.onClick.Invoke();
+                if (i == 0) btn.onClick.Invoke();
 
                 i++;
             }
