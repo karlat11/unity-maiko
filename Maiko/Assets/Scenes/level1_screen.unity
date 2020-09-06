@@ -564,6 +564,10 @@ MonoBehaviour:
   nextBtn: {fileID: 276083024}
   backBtn: {fileID: 1799912712}
   quitBtn: {fileID: 0}
+  openPopUpBtn: {fileID: 0}
+  closePopUp: []
+  popUpPanel: {fileID: 0}
+  levelId: 
 --- !u!1 &468612248
 GameObject:
   m_ObjectHideFlags: 0
@@ -1444,7 +1448,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1024086636}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.01, z: 0}
+  m_LocalPosition: {x: 0, y: 0.64, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1697342398}
@@ -6007,6 +6011,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1697342402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697342396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd174602390bec3488a55f419aa59f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1799912710
 GameObject:
   m_ObjectHideFlags: 0

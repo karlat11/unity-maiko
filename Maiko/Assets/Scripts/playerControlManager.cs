@@ -6,6 +6,7 @@ public class playerControlManager : MonoBehaviour
 
     private NavMeshAgent agent;
     private Animator animator;
+    private bool detected;
 
     private void Start()
     {
