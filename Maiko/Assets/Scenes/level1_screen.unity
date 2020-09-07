@@ -647,7 +647,6 @@ MonoBehaviour:
   sneaking: 0
   enemyToFace: {fileID: 0}
   popUpPanel: {fileID: 1535545731}
-  uiManager: {fileID: 385866478}
 --- !u!95 &217416639
 Animator:
   serializedVersion: 3
@@ -1160,8 +1159,8 @@ MonoBehaviour:
   closePopUp: []
   popUpPanel: {fileID: 1535545731}
   pauseScreen: {fileID: 7107749048157748855}
+  npcPanel: {fileID: 868708776}
   levelId: level1_screen
-  gamePaused: 0
 --- !u!1 &468612248
 GameObject:
   m_ObjectHideFlags: 0

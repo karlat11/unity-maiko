@@ -11,7 +11,6 @@ public class playerControlManager : MonoBehaviour
     [HideInInspector]
     public Transform enemyToFace;
     public GameObject popUpPanel;
-    public UIManager uiManager;
 
     private NavMeshAgent agent;
     private Animator animator;
@@ -30,7 +29,7 @@ public class playerControlManager : MonoBehaviour
     {
         state = animator.GetCurrentAnimatorStateInfo(0);
 
-        if (Input.GetMouseButtonDown(0) && !detected && !uiManager.gamePaused)
+        if (Input.GetMouseButtonDown(0) && !detected && !UIManager.gamePaused)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -46,7 +45,7 @@ public class playerControlManager : MonoBehaviour
             }
         }
         
-        else if (Input.GetMouseButtonDown(1) && !detected && !uiManager.gamePaused)
+        else if (Input.GetMouseButtonDown(1) && !detected && !UIManager.gamePaused)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;

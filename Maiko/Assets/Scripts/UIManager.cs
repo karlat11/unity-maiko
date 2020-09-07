@@ -6,15 +6,16 @@ public class UIManager : MonoBehaviour
 {
     public Button homeBtn, nextBtn, backBtn, quitBtn, openPopUpBtn, pauseBtn, resumeBtn;
     public Button[] closePopUp;
-    public GameObject popUpPanel, pauseScreen;
+    public GameObject popUpPanel, pauseScreen, npcPanel;
     public string levelId;
 
     [HideInInspector]
-    public bool gamePaused = false;
+    public static bool gamePaused = false;
 
     private void Start()
     {
         if (pauseScreen) pauseScreen.SetActive(false);
+        if (npcPanel) npcPanel.SetActive(true);
 
         if (homeBtn) homeBtn.onClick.AddListener(delegate () {
             SceneManager.LoadScene(0);
@@ -37,12 +38,15 @@ public class UIManager : MonoBehaviour
         });
 
         if (pauseBtn && pauseScreen) pauseBtn.onClick.AddListener(delegate () {
+            npcPanel.SetActive(false);
             pauseScreen.SetActive(true);
             Time.timeScale = 0f;
             gamePaused = true;
+
         });
 
         if (resumeBtn && pauseScreen) resumeBtn.onClick.AddListener(delegate () {
+            npcPanel.SetActive(true);
             pauseScreen.SetActive(false);
             Time.timeScale = 1f;
             gamePaused = false;
