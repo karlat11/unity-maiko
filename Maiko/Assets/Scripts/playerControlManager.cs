@@ -5,7 +5,7 @@ using UnityEngine.AI;
 public class playerControlManager : MonoBehaviour
 {
     [HideInInspector]
-    public bool detected = false;
+    public static bool detected = false;
     [HideInInspector]
     public bool sneaking = false;
     [HideInInspector]
@@ -24,6 +24,7 @@ public class playerControlManager : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         coroutine = delayInitialPopUp();
+        detected = false;
     }
     void Update()
     {

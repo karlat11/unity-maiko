@@ -30,22 +30,25 @@ public class enemyController : MonoBehaviour
 
     private void Update()
     {
-        if (!agent.pathPending &&
+        if (!playerControlManager.detected)
+        {
+            if (!agent.pathPending &&
             agent.remainingDistance <= agent.stoppingDistance &&
             (!agent.hasPath || agent.velocity.sqrMagnitude == 0f))
-        {
-            animator.Play("Base Layer.idle");
+            {
+                animator.Play("Base Layer.idle");
 
-            if (waypointIdx < wPoints.Length - 1) waypointIdx++;
-            else waypointIdx = 0;
+                if (waypointIdx < wPoints.Length - 1) waypointIdx++;
+                else waypointIdx = 0;
 
-            waypointTarget = wPoints[waypointIdx];
-            agent.SetDestination(waypointTarget.position);
-        }
+                waypointTarget = wPoints[waypointIdx];
+                agent.SetDestination(waypointTarget.position);
+            }
 
-        else
-        {
-            animator.Play("Base Layer.walk");
+            else
+            {
+                animator.Play("Base Layer.walk");
+            }
         }
     }
 
@@ -61,11 +64,12 @@ public class enemyController : MonoBehaviour
                 foreach (Transform target in fov.visibleTargets)
                 {
                     playerControlManager targetManager = target.GetComponent<playerControlManager>();
-                    if (!targetManager.detected)
+                    if (!playerControlManager.detected)
                     {
                         targetManager.enemyToFace = transform;
-                        targetManager.detected = true;
+                        playerControlManager.detected = true;
                         transform.LookAt(target);
+                        agent.isStopped = true;
                     }
                 }
             }
@@ -80,10 +84,15 @@ public class enemyController : MonoBehaviour
 
                 foreach (Transform target in fov.visibleTargets)
                 {
-                    playerControlManager targetManager = target.GetComponent<playerControlManager>();
-                    if (targetManager.detected) targetManager.detected = false;
+                    if (playerControlManager.detected) playerControlManager.detected = false;
                 }
             }
+        }
+
+        if (playerControlManager.detected && !agent.isStopped)
+        {
+            animator.Play("Base Layer.idle");
+            agent.isStopped = true;
         }
     }
 

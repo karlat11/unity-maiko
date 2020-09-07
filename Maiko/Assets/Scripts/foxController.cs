@@ -22,7 +22,7 @@ public class foxController : MonoBehaviour
                 if (animator != null) animator.Play("Base Layer.wakeup");
                 targetVisible = true;
                 targetManager.enemyToFace = transform;
-                targetManager.detected = true;
+                playerControlManager.detected = true;
                 transform.LookAt(fov.visibleTargets[0]);
             }
         }
@@ -33,8 +33,7 @@ public class foxController : MonoBehaviour
             {
                 targetVisible = false;
                 if (animator != null) animator.Play("Base Layer.sleep");
-                playerControlManager targetManager = fov.visibleTargets[0].GetComponent<playerControlManager>();
-                if (targetManager.detected) targetManager.detected = false;
+                if (playerControlManager.detected) playerControlManager.detected = false;
             }
         }
     }
