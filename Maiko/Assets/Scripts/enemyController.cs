@@ -4,6 +4,9 @@ using UnityEngine.AI;
 public class enemyController : MonoBehaviour
 {
     public GameObject waypointPatrol;
+    public string npcName;
+    public string npcCopy;
+    public Sprite npcImage;
 
     private Transform waypointTarget;
     private Transform[] wPoints;
@@ -71,6 +74,7 @@ public class enemyController : MonoBehaviour
                         playerControlManager.detected = true;
                         transform.LookAt(target);
                         agent.isStopped = true;
+                        npcPanelManager.UpdateDetection(npcName, npcCopy, npcImage);
                     }
                 }
             }

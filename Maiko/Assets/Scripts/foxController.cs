@@ -2,6 +2,10 @@
 
 public class foxController : MonoBehaviour
 {
+    public string npcName;
+    public string npcCopy;
+    public Sprite npcImage;
+
     private fieldOfView fov;
     private bool targetVisible = false;
     private Animator animator;
@@ -24,6 +28,7 @@ public class foxController : MonoBehaviour
                 targetManager.enemyToFace = transform;
                 playerControlManager.detected = true;
                 transform.LookAt(fov.visibleTargets[0]);
+                npcPanelManager.UpdateDetection(npcName, npcCopy, npcImage);
             }
         }
 

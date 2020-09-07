@@ -84,6 +84,7 @@ public class playerControlManager : MonoBehaviour
     IEnumerator delayInitialPopUp()
     {
         yield return new WaitForSeconds(initialPopUpDelay);
+        UIManager.nPanel.SetActive(false);
         popUpPanel.SetActive(true);
         StopCoroutine(coroutine);
     }

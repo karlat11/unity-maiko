@@ -9,13 +9,18 @@ public class UIManager : MonoBehaviour
     public GameObject popUpPanel, pauseScreen, npcPanel;
     public string levelId;
 
-    [HideInInspector]
     public static bool gamePaused = false;
+    public static GameObject nPanel;
+
+    private void Awake()
+    {
+        nPanel = npcPanel;
+    }
 
     private void Start()
     {
         if (pauseScreen) pauseScreen.SetActive(false);
-        if (npcPanel) npcPanel.SetActive(true);
+        if (nPanel) nPanel.SetActive(true);
 
         if (homeBtn) homeBtn.onClick.AddListener(delegate () {
             SceneManager.LoadScene(0);
@@ -38,7 +43,7 @@ public class UIManager : MonoBehaviour
         });
 
         if (pauseBtn && pauseScreen) pauseBtn.onClick.AddListener(delegate () {
-            npcPanel.SetActive(false);
+            nPanel.SetActive(false);
             pauseScreen.SetActive(true);
             Time.timeScale = 0f;
             gamePaused = true;
@@ -46,7 +51,7 @@ public class UIManager : MonoBehaviour
         });
 
         if (resumeBtn && pauseScreen) resumeBtn.onClick.AddListener(delegate () {
-            npcPanel.SetActive(true);
+            nPanel.SetActive(true);
             pauseScreen.SetActive(false);
             Time.timeScale = 1f;
             gamePaused = false;
