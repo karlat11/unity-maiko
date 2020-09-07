@@ -12,6 +12,7 @@ public class enemyController : MonoBehaviour
     private bool targetVisible = false;
     private Animator animator;
     private NavMeshAgent agent;
+
     private void Awake()
     {
         wPoints = new Transform[waypointPatrol.transform.childCount];
@@ -82,10 +83,7 @@ public class enemyController : MonoBehaviour
                 targetVisible = false;
                 if (animator != null) animator.Play("Base Layer.coolDown");
 
-                foreach (Transform target in fov.visibleTargets)
-                {
-                    if (playerControlManager.detected) playerControlManager.detected = false;
-                }
+                if (playerControlManager.detected) playerControlManager.detected = false;
             }
         }
 
