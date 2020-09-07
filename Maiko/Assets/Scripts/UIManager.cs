@@ -4,13 +4,18 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    public Button homeBtn, nextBtn, backBtn, quitBtn, openPopUpBtn;
+    public Button homeBtn, nextBtn, backBtn, quitBtn, openPopUpBtn, pauseBtn, resumeBtn;
     public Button[] closePopUp;
-    public GameObject popUpPanel;
+    public GameObject popUpPanel, pauseScreen;
     public string levelId;
+
+    [HideInInspector]
+    public bool gamePaused = false;
 
     private void Start()
     {
+        if (pauseScreen) pauseScreen.SetActive(false);
+
         if (homeBtn) homeBtn.onClick.AddListener(delegate () {
             SceneManager.LoadScene(0);
         });
@@ -29,6 +34,18 @@ public class UIManager : MonoBehaviour
 
         if (openPopUpBtn && popUpPanel) openPopUpBtn.onClick.AddListener(delegate () {
             popUpPanel.SetActive(true);
+        });
+
+        if (pauseBtn && pauseScreen) pauseBtn.onClick.AddListener(delegate () {
+            pauseScreen.SetActive(true);
+            Time.timeScale = 0f;
+            gamePaused = true;
+        });
+
+        if (resumeBtn && pauseScreen) resumeBtn.onClick.AddListener(delegate () {
+            pauseScreen.SetActive(false);
+            Time.timeScale = 1f;
+            gamePaused = false;
         });
 
         if ((closePopUp != null && closePopUp.Length != 0) && popUpPanel)
