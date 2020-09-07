@@ -528,7 +528,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 385866478}
         m_MethodName: LoadLevel
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -795,9 +795,13 @@ MonoBehaviour:
   backBtn: {fileID: 1799912712}
   quitBtn: {fileID: 0}
   openPopUpBtn: {fileID: 0}
+  pauseBtn: {fileID: 0}
+  resumeBtn: {fileID: 0}
   closePopUp: []
   popUpPanel: {fileID: 0}
+  pauseScreen: {fileID: 0}
   levelId: 
+  gamePaused: 0
 --- !u!1 &388949042
 GameObject:
   m_ObjectHideFlags: 0

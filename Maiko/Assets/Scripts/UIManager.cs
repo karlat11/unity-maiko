@@ -59,8 +59,9 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void LoadLevel()
+    public void LoadLevel(string lvlName = default(string))
     {
-        SceneManager.LoadScene(levelId);
+        string lvl = lvlName != null && lvlName != "" ? lvlName : levelId;
+        SceneManager.LoadScene(lvl);
     }
 }
