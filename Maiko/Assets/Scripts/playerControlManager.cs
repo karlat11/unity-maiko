@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.EventSystems;
 
 public class playerControlManager : MonoBehaviour
 {
@@ -18,18 +19,24 @@ public class playerControlManager : MonoBehaviour
     private int initialPopUpDelay = 5;
     private IEnumerator coroutine;
 
+    EventSystem _event;
+
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         coroutine = delayInitialPopUp();
         detected = false;
+
+        _event = EventSystem.current;
     }
     void Update()
     {
         state = animator.GetCurrentAnimatorStateInfo(0);
 
-        if (Input.GetMouseButtonDown(0) && !detected && !UIManager.gamePaused)
+        if (Input.GetMouseButtonDown(0) && 
+            !detected && !UIManager.gamePaused && 
+            !_event.IsPointerOverGameObject())
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -45,7 +52,9 @@ public class playerControlManager : MonoBehaviour
             }
         }
         
-        else if (Input.GetMouseButtonDown(1) && !detected && !UIManager.gamePaused)
+        else if (Input.GetMouseButtonDown(1) && 
+            !detected && !UIManager.gamePaused &&
+            !_event.IsPointerOverGameObject())
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
