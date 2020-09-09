@@ -48,20 +48,27 @@ public class nameSelectionManager : MonoBehaviour
         nameText.text = nameList[nameIdx];
         surnameText.text = surnameList[surnameIdx];
 
+        PlayerPrefs.SetString("PlayerName", nameText.text);
+        PlayerPrefs.SetString("PlayerSurname", surnameText.text);
+
         surnameNext.onClick.AddListener(delegate () {
             surnameIdx = nextIdx(surnameIdx, surnameText, surnameList);
+            PlayerPrefs.SetString("PlayerSurname", surnameText.text);
         });
 
         surnamePrev.onClick.AddListener(delegate () {
             surnameIdx = prevIdx(surnameIdx, surnameText, surnameList);
+            PlayerPrefs.SetString("PlayerSurname", surnameText.text);
         });
 
         nameNext.onClick.AddListener(delegate () {
             nameIdx = nextIdx(nameIdx, nameText, nameList);
+            PlayerPrefs.SetString("PlayerName", nameText.text);
         });
 
         namePrev.onClick.AddListener(delegate () {
             nameIdx = prevIdx(nameIdx, nameText, nameList);
+            PlayerPrefs.SetString("PlayerName", nameText.text);
         });
 
         StartCoroutine(coroutine);

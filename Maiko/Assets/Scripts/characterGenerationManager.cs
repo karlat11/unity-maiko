@@ -31,6 +31,13 @@ public class characterGenerationManager : MonoBehaviour
     private float dist = 0;
     private IEnumerator coroutine;
 
+    private void Awake()
+    {
+        updateStats(0, "hair.flower");
+        updateStats(1, "pyszczek.003");
+        updateStats(2, "bow.001");
+    }
+
     void Start()
     {
         popUpPanel.SetActive(false);
@@ -113,6 +120,7 @@ public class characterGenerationManager : MonoBehaviour
             }
 
             currentList[currentId].SetActive(true);
+            updateStats(idx, currentList[currentId].name);
         });
 
         prevBtn.onClick.AddListener(delegate () {
@@ -128,6 +136,7 @@ public class characterGenerationManager : MonoBehaviour
             }
 
             currentList[currentId].SetActive(true);
+            updateStats(idx, currentList[currentId].name);
         });
 
         hairBtn.onClick.Invoke();
@@ -161,6 +170,25 @@ public class characterGenerationManager : MonoBehaviour
                 model.transform.Rotate(0, model.transform.rotation.y + dist/2, 0);
                 hitPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.z);
             }
+        }
+    }
+
+    void updateStats(int listId, string assetName)
+    {
+        switch (listId)
+        {
+            case 0:
+                PlayerPrefs.SetString("PlayerHair", assetName);
+                break;
+            case 1:
+                PlayerPrefs.SetString("PlayerMakeup", assetName);
+                break;
+            case 2:
+                PlayerPrefs.SetString("PlayerDress", assetName);
+                break;
+            default:
+                Debug.Log("Unrecognised list ID");
+                break;
         }
     }
 
