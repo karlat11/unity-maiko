@@ -62,7 +62,15 @@ public class playerControlManager : MonoBehaviour
                 sneaking = false;
                 isInteractible = checkForInteracible(hit.collider.gameObject);
 
-                if (isInteractible) targetInteractible = hit.collider.gameObject;
+                if (isInteractible)
+                {
+                    targetInteractible = hit.collider.gameObject;
+                    agent.stoppingDistance = 1.5f;
+                }
+                else
+                {
+                    agent.stoppingDistance = 0.1f;
+                }
             }
         }
         
@@ -83,7 +91,14 @@ public class playerControlManager : MonoBehaviour
                 sneaking = true;
                 isInteractible = checkForInteracible(hit.collider.gameObject);
 
-                if (isInteractible) targetInteractible = hit.collider.gameObject;
+                if (isInteractible)
+                {
+                    targetInteractible = hit.collider.gameObject;
+                    agent.stoppingDistance = 1.5f;
+                } else
+                {
+                    agent.stoppingDistance = 0.1f;
+                }
             }
         }
 
