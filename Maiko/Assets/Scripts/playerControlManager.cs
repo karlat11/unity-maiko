@@ -12,14 +12,25 @@ public class playerControlManager : MonoBehaviour
     [HideInInspector]
     public Transform enemyToFace;
     public GameObject popUpPanel;
+    public GameObject interactibleCont;
 
+    private GameObject targetInteractible = null;
+    private GameObject[] interactibles;
     private NavMeshAgent agent;
     private Animator animator;
     private AnimatorStateInfo state;
     private int initialPopUpDelay = 5;
     private IEnumerator coroutine;
+    private bool isInteractible = false;
+    private bool startedAnimTransition = false;
 
     EventSystem _event;
+
+    private void Awake()
+    {
+        interactibles = new GameObject[interactibleCont.transform.childCount];
+        for (int i = 0; i < interactibles.Length; i++) interactibles[i] = interactibleCont.transform.GetChild(i).gameObject;
+    }
 
     private void Start()
     {
@@ -49,6 +60,9 @@ public class playerControlManager : MonoBehaviour
                 agent.speed = 1.75f;
                 agent.angularSpeed = 700f;
                 sneaking = false;
+                isInteractible = checkForInteracible(hit.collider.gameObject);
+
+                if (isInteractible) targetInteractible = hit.collider.gameObject;
             }
         }
         
@@ -67,6 +81,9 @@ public class playerControlManager : MonoBehaviour
                 agent.speed = 1f;
                 agent.angularSpeed = 700f;
                 sneaking = true;
+                isInteractible = checkForInteracible(hit.collider.gameObject);
+
+                if (isInteractible) targetInteractible = hit.collider.gameObject;
             }
         }
 
@@ -75,7 +92,16 @@ public class playerControlManager : MonoBehaviour
             (!agent.hasPath || agent.velocity.sqrMagnitude == 0f) &&
             !detected)
         {
-            if (!state.IsName("idle")) animator.Play("Base Layer.idle");
+            switch (isInteractible)
+            {
+                case true:
+                    collectInteractible();
+                    startedAnimTransition = true;
+                    break;
+                case false:
+                    if (!state.IsName("collect") && !state.IsName("idle")) animator.Play("Base Layer.idle");
+                    break;
+            }
         }
 
         if (detected)
@@ -88,6 +114,35 @@ public class playerControlManager : MonoBehaviour
                 StartCoroutine(coroutine);
             }
         }
+    }
+
+    bool checkForInteracible(GameObject obj)
+    {
+        foreach(GameObject child in interactibles)
+        {
+            if (child == obj) return true;
+        }
+
+        return false;
+    }
+
+    void collectInteractible()
+    {
+        if (!startedAnimTransition && !state.IsName("collect")) animator.Play("Base Layer.collect");
+
+        if (startedAnimTransition && !state.IsName("collect"))
+        {
+            foreach (GameObject child in interactibles)
+            {
+                if (child == targetInteractible)
+                {
+                    child.SetActive(false);
+                    targetInteractible = null;
+                    isInteractible = false;
+                }
+            }
+        }
+
     }
 
     IEnumerator delayInitialPopUp()
