@@ -133,10 +133,8 @@ public class playerControlManager : MonoBehaviour
 
     bool checkForInteracible(GameObject obj)
     {
-        foreach(GameObject child in interactibles)
-        {
+        foreach(GameObject child in interactibles) 
             if (child == obj) return true;
-        }
 
         return false;
     }
