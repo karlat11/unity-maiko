@@ -5,8 +5,9 @@ using UnityEngine.EventSystems;
 
 public class playerControlManager : MonoBehaviour
 {
-    [HideInInspector]
     public static bool detected = false;
+    public static GameObject[] interactibles;
+
     [HideInInspector]
     public bool sneaking = false;
     [HideInInspector]
@@ -15,7 +16,6 @@ public class playerControlManager : MonoBehaviour
     public GameObject interactibleCont;
 
     private GameObject targetInteractible = null;
-    private GameObject[] interactibles;
     private NavMeshAgent agent;
     private Animator animator;
     private AnimatorStateInfo state;
@@ -152,6 +152,7 @@ public class playerControlManager : MonoBehaviour
                     child.SetActive(false);
                     targetInteractible = null;
                     isInteractible = false;
+                    npcPanelManager.scoreIncreased = true;
                 }
             }
         }
