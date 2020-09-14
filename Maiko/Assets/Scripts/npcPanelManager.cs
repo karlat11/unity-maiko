@@ -91,7 +91,7 @@ public class npcPanelManager : MonoBehaviour
     private void updatePopUp()
     {
         endPanelTitle.text = "Woo Hoo!";
-        endPanelCopy.text = "You did it! You have collected all the secter documents needed and completed the mission undetected!";
+        endPanelCopy.text = "You did it! You have collected all the secret documents needed and completed the mission undetected!";
         endPanelCompleteBtn.onClick.AddListener(delegate () {
             SceneManager.LoadScene("levelSelection_screen");
         });
