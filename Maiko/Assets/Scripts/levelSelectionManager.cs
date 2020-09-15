@@ -15,7 +15,7 @@ public class levelSelectionManager : MonoBehaviour
     {
         uiManag = GetComponent<UIManager>();
         levelBtns = btns.GetComponentsInChildren<Button>();
-        levelsUnlocked = 3;
+        levelsUnlocked = 1;
 
         if (levelBtns != null && levelBtns.Length != 0)
         {
