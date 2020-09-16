@@ -9,14 +9,15 @@ public class npcPanelManager : MonoBehaviour
     public static string detectedBy = "";
     public static bool scoreIncreased = false;
     public GameObject popUpPanel;
+    public TextMeshProUGUI scoreCounter;
 
     private static TextMeshProUGUI copy;
     private static TextMeshProUGUI npcName;
     private static Image npcImg;
-    private TextMeshProUGUI scoreCounter;
     private TextMeshProUGUI endPanelTitle;
     private TextMeshProUGUI endPanelCopy;
     private Button endPanelCompleteBtn;
+    private Button closePopUpBtn;
     private npcPanelManager self;
     private int initialPopUpDelay = 1;
 
@@ -30,7 +31,6 @@ public class npcPanelManager : MonoBehaviour
         {
             if (obj.tag == "Copy") copy = obj;
             else if (obj.tag == "npcName") npcName = obj;
-            else if (obj.tag == "scoreCounter") scoreCounter = obj;
         }
 
         Image[] imgObjects = GetComponentsInChildren<Image>();
@@ -39,12 +39,18 @@ public class npcPanelManager : MonoBehaviour
             if (obj.tag == "npcImage") npcImg = obj;
         }
 
+        closePopUpBtn = GetComponentInChildren<Button>();
+
         wireUpPopUp();
     }
 
     private void Start()
     {
         scoreCounter.text = PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + "_score").ToString() + "/" + playerControlManager.interactibles.Length.ToString();
+        
+        closePopUpBtn.onClick.AddListener(delegate () {
+            UIManager.nPanel.SetActive(false);
+        });
     }
 
     private void Update()
@@ -68,6 +74,7 @@ public class npcPanelManager : MonoBehaviour
         npcName.text = name + ":";
         copy.text = dialogue;
         npcImg.sprite = img;
+        UIManager.nPanel.SetActive(true);
     }
     private void increaseScore()
     {

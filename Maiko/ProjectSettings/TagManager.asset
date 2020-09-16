@@ -12,6 +12,7 @@ TagManager:
   - npcImage
   - scoreCounter
   - UI
+  - closeBtn
   layers:
   - Default
   - TransparentFX
