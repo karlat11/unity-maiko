@@ -447,6 +447,7 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 512
+  visibleTargets: []
   viewMeshFilter: {fileID: 1635870989}
   edgeResolveIterations: 4
 --- !u!114 &79541097
@@ -555,6 +556,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: -6482696589764928390, guid: c0e31bc5b83476c4ca8172f9fdeaeb1a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4904782989068966781, guid: c0e31bc5b83476c4ca8172f9fdeaeb1a,
         type: 3}
@@ -1169,6 +1175,7 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 512
+  visibleTargets: []
   viewMeshFilter: {fileID: 1434589658}
   edgeResolveIterations: 4
 --- !u!136 &217416641
@@ -3944,6 +3951,7 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 512
+  visibleTargets: []
   viewMeshFilter: {fileID: 872859588}
   edgeResolveIterations: 4
 --- !u!95 &258746752
@@ -7642,6 +7650,7 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 512
+  visibleTargets: []
   viewMeshFilter: {fileID: 1450798291}
   edgeResolveIterations: 4
 --- !u!95 &512064053
@@ -8536,6 +8545,7 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 512
+  visibleTargets: []
   viewMeshFilter: {fileID: 250429504}
   edgeResolveIterations: 4
 --- !u!195 &629879853
@@ -12529,6 +12539,7 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 512
+  visibleTargets: []
   viewMeshFilter: {fileID: 1462074463}
   edgeResolveIterations: 4
 --- !u!114 &814370665
@@ -21491,6 +21502,7 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 512
+  visibleTargets: []
   viewMeshFilter: {fileID: 1120782290}
   edgeResolveIterations: 4
 --- !u!95 &1370339951
@@ -24176,6 +24188,7 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 512
+  visibleTargets: []
   viewMeshFilter: {fileID: 1127287120}
   edgeResolveIterations: 4
 --- !u!114 &1387737827
@@ -27772,6 +27785,7 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 512
+  visibleTargets: []
   viewMeshFilter: {fileID: 1024086639}
   edgeResolveIterations: 4
 --- !u!54 &1697342401
@@ -31338,6 +31352,7 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 512
+  visibleTargets: []
   viewMeshFilter: {fileID: 26192482}
   edgeResolveIterations: 4
 --- !u!95 &1942111215
@@ -32315,6 +32330,7 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 512
+  visibleTargets: []
   viewMeshFilter: {fileID: 595033730}
   edgeResolveIterations: 4
 --- !u!195 &2074147905
