@@ -12,6 +12,7 @@ public class cameraManager : MonoBehaviour
     private float padding = 50f;
     private float smoothSpeed = 10f;
     private Vector3 targetPos;
+    private bool wDown, sDown, aDown, dDown = false;
 
     private void Start()
     {
@@ -33,6 +34,13 @@ public class cameraManager : MonoBehaviour
 
         if (Input.mousePosition.y > Screen.height - padding) targetPos.y += movementSpeed * Time.deltaTime;
         else if (Input.mousePosition.y < padding) targetPos.y -= movementSpeed * Time.deltaTime;
+
+        CheckKeys();
+
+        if (wDown) targetPos.y += movementSpeed * Time.deltaTime;
+        if (sDown) targetPos.y -= movementSpeed * Time.deltaTime;
+        if (aDown) targetPos.x -= movementSpeed * Time.deltaTime;
+        if (dDown) targetPos.x += movementSpeed * Time.deltaTime;
     }
 
     private void LateUpdate()
@@ -42,5 +50,20 @@ public class cameraManager : MonoBehaviour
 
         if (Camera.main.orthographicSize > cameraDistance) Camera.main.orthographicSize--;
         else if (Camera.main.orthographicSize < cameraDistance) Camera.main.orthographicSize++;
+    }
+
+    private void CheckKeys()
+    {
+        if (Input.GetKeyDown(KeyCode.W)) wDown = true;
+        else if (Input.GetKeyUp(KeyCode.W)) wDown = false;
+
+        if (Input.GetKeyDown(KeyCode.S)) sDown = true;
+        else if (Input.GetKeyUp(KeyCode.S)) sDown = false;
+
+        if (Input.GetKeyDown(KeyCode.A)) aDown = true;
+        else if (Input.GetKeyUp(KeyCode.A)) aDown = false;
+
+        if (Input.GetKeyDown(KeyCode.D)) dDown = true;
+        else if (Input.GetKeyUp(KeyCode.D)) dDown = false;
     }
 }
