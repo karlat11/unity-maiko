@@ -28,7 +28,17 @@ public class UIManager : MonoBehaviour
         });
 
         if (nextBtn) nextBtn.onClick.AddListener(delegate () {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            if (SceneManager.GetActiveScene().name == "splash" &&
+            (PlayerPrefs.GetString("PlayerName") != "" || PlayerPrefs.GetString("PlayerName") != null) &&
+            (PlayerPrefs.GetString("PlayerSurname") != "" || PlayerPrefs.GetString("PlayerSurname") != null) &&
+            (PlayerPrefs.GetString("PlayerHair") != "" || PlayerPrefs.GetString("PlayerHair") != null) &&
+            (PlayerPrefs.GetString("PlayerMakeup") != "" || PlayerPrefs.GetString("PlayerMakeup") != null) &&
+            (PlayerPrefs.GetString("PlayerDress") != "" || PlayerPrefs.GetString("PlayerDress") != null))
+            {
+                SceneManager.LoadScene(3);
+            }
+            
+            else SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         });
 
         if (backBtn) backBtn.onClick.AddListener(delegate () {
