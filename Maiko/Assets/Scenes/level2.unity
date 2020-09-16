@@ -25563,10 +25563,12 @@ PrefabInstance:
     - target: {fileID: 7107749047797338425, guid: 1ac769abd50a6614a8e3e904cd42a188,
         type: 3}
       propertyPath: m_text
-      value: Oh, no! You have just been caught by a samurai! Kunoichi have to stay
+      value: 'Oh, no! You have just been caught by a samurai! Kunoichi have to stay
         undetected for the entirely of their missions otherwise the clan served could
-        get compromised and so could the Kunoichi group itself. Would you like to
-        try again?
+        get compromised and so could the Kunoichi group itself.
+
+        Would you
+        like to try again?'
       objectReference: {fileID: 0}
     - target: {fileID: 7107749047797338425, guid: 1ac769abd50a6614a8e3e904cd42a188,
         type: 3}
