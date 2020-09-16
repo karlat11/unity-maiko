@@ -96,6 +96,7 @@ public class npcPanelManager : MonoBehaviour
             SceneManager.LoadScene("levelSelection_screen");
         });
         popUpPanel.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     IEnumerator showPopUp()

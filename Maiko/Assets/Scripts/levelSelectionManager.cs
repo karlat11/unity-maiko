@@ -13,6 +13,7 @@ public class levelSelectionManager : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1f;
         uiManag = GetComponent<UIManager>();
         levelBtns = btns.GetComponentsInChildren<Button>();
         levelsUnlocked = 1;
