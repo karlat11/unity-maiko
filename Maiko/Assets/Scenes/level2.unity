@@ -4922,10 +4922,13 @@ MonoBehaviour:
   openPopUpBtn: {fileID: 0}
   pauseBtn: {fileID: 1799912712}
   resumeBtn: {fileID: 7107749047484947344}
+  referenceBtn: {fileID: 0}
+  referenceCloseBtn: {fileID: 0}
   closePopUp: []
   popUpPanel: {fileID: 1535545731}
   pauseScreen: {fileID: 7107749048157748855}
   npcPanel: {fileID: 868708776}
+  referencePanel: {fileID: 0}
   levelId: level2
 --- !u!1 &423199756 stripped
 GameObject:
@@ -13622,6 +13625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popUpPanel: {fileID: 1535545731}
   scoreCounter: {fileID: 1228578951}
+  customBriefing: ', you need to steal the secret documents from here!'
 --- !u!1 &872859585
 GameObject:
   m_ObjectHideFlags: 0

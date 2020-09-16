@@ -10,6 +10,7 @@ public class npcPanelManager : MonoBehaviour
     public static bool scoreIncreased = false;
     public GameObject popUpPanel;
     public TextMeshProUGUI scoreCounter;
+    public string customBriefing;
 
     private static TextMeshProUGUI copy;
     private static TextMeshProUGUI npcName;
@@ -51,6 +52,8 @@ public class npcPanelManager : MonoBehaviour
         closePopUpBtn.onClick.AddListener(delegate () {
             UIManager.nPanel.SetActive(false);
         });
+
+        copy.text = "Kunoichi " + PlayerPrefs.GetString("PlayerSurname") + " " + PlayerPrefs.GetString("PlayerName") + customBriefing;
     }
 
     private void Update()
