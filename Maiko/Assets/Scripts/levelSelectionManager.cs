@@ -6,6 +6,7 @@ public class levelSelectionManager : MonoBehaviour
 {
     public GameObject btns;
     public TextMeshProUGUI briefing;
+    public Image levelImg;
     
     private int levelsUnlocked;
     private Button[] levelBtns;
@@ -38,7 +39,7 @@ public class levelSelectionManager : MonoBehaviour
                 briefingCreator bCreator = btn.GetComponentInChildren<briefingCreator>();
 
                 btn.onClick.AddListener(delegate () {
-                    changeSelectedLvl(btn, bCreator.sentences);
+                    changeSelectedLvl(btn, bCreator.sentences, bCreator.levelImage);
                     uiManag.levelId = bCreator.levelName;
                 });
 
@@ -56,10 +57,11 @@ public class levelSelectionManager : MonoBehaviour
         img.enabled = unlocked ? false : true;
     }
 
-    void changeSelectedLvl(Button btn, string[] copy)
+    void changeSelectedLvl(Button btn, string[] copy, Sprite img)
     {
         foreach (Button child in levelBtns) child.interactable = true;
         btn.interactable = false;
         briefing.text = copy[0];
+        levelImg.sprite = img;
     }
 }
