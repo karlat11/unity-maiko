@@ -57,7 +57,7 @@ public class UIManager : MonoBehaviour
             Time.timeScale = 1f;
             gamePaused = false;
         });
-        Debug.Log("ref btn: " + referenceBtn + " pan " + referencePanel);
+
         if (referenceBtn && referencePanel) referenceBtn.onClick.AddListener(delegate () {
             referencePanel.SetActive(true);
         });
