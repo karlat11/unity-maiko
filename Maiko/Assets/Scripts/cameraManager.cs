@@ -23,7 +23,7 @@ public class cameraManager : MonoBehaviour
     {
         if (Input.GetAxis("Mouse ScrollWheel") != 0)
         {
-            cameraDistance += Input.GetAxis("Mouse ScrollWheel") * scrollSpeed;
+            cameraDistance -= Input.GetAxis("Mouse ScrollWheel") * scrollSpeed;
             cameraDistance = Mathf.Clamp(cameraDistance, cameraDistanceMin, cameraDistanceMax);
             Camera.main.orthographicSize = cameraDistance;
         }
