@@ -4,9 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    public Button homeBtn, nextBtn, backBtn, quitBtn, openPopUpBtn, pauseBtn, resumeBtn;
+    public Button homeBtn, nextBtn, backBtn, quitBtn, openPopUpBtn, pauseBtn, resumeBtn, referenceBtn, referenceCloseBtn;
     public Button[] closePopUp;
-    public GameObject popUpPanel, pauseScreen, npcPanel;
+    public GameObject popUpPanel, pauseScreen, npcPanel, referencePanel;
     public string levelId;
 
     public static bool gamePaused = false;
@@ -21,6 +21,7 @@ public class UIManager : MonoBehaviour
     {
         if (pauseScreen) pauseScreen.SetActive(false);
         if (nPanel) nPanel.SetActive(true);
+        if (referencePanel) referencePanel.SetActive(false);
 
         if (homeBtn) homeBtn.onClick.AddListener(delegate () {
             SceneManager.LoadScene(0);
@@ -55,6 +56,14 @@ public class UIManager : MonoBehaviour
             pauseScreen.SetActive(false);
             Time.timeScale = 1f;
             gamePaused = false;
+        });
+        Debug.Log("ref btn: " + referenceBtn + " pan " + referencePanel);
+        if (referenceBtn && referencePanel) referenceBtn.onClick.AddListener(delegate () {
+            referencePanel.SetActive(true);
+        });
+
+        if (referenceCloseBtn && referencePanel) referenceCloseBtn.onClick.AddListener(delegate () {
+            referencePanel.SetActive(false);
         });
 
         if ((closePopUp != null && closePopUp.Length != 0) && popUpPanel)
