@@ -26,7 +26,6 @@ public class cameraManager : MonoBehaviour
         {
             cameraDistance -= Input.GetAxis("Mouse ScrollWheel") * scrollSpeed;
             cameraDistance = Mathf.Clamp(cameraDistance, cameraDistanceMin, cameraDistanceMax);
-            Camera.main.orthographicSize = cameraDistance;
         }
 
         if (Input.mousePosition.x > Screen.width - padding) targetPos.x += movementSpeed * Time.deltaTime;
@@ -48,8 +47,8 @@ public class cameraManager : MonoBehaviour
         Vector3 smoothPos = Vector3.Lerp(transform.position, targetPos, smoothSpeed * Time.deltaTime);
         transform.position = smoothPos;
 
-        if (Camera.main.orthographicSize > cameraDistance) Camera.main.orthographicSize--;
-        else if (Camera.main.orthographicSize < cameraDistance) Camera.main.orthographicSize++;
+        float smoothScale = Mathf.Lerp(Camera.main.orthographicSize, cameraDistance, smoothSpeed * Time.deltaTime);
+        Camera.main.orthographicSize = smoothScale;
     }
 
     private void CheckKeys()
