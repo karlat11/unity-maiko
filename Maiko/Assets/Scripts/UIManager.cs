@@ -50,7 +50,16 @@ public class UIManager : MonoBehaviour
         });
 
         if (openPopUpBtn && popUpPanel) openPopUpBtn.onClick.AddListener(delegate () {
-            popUpPanel.SetActive(true);
+            if (SceneManager.GetActiveScene().name == "splash" &&
+            (PlayerPrefs.GetString("PlayerName") != "" || PlayerPrefs.GetString("PlayerName") != null) &&
+            (PlayerPrefs.GetString("PlayerSurname") != "" || PlayerPrefs.GetString("PlayerSurname") != null) &&
+            (PlayerPrefs.GetString("PlayerHair") != "" || PlayerPrefs.GetString("PlayerHair") != null) &&
+            (PlayerPrefs.GetString("PlayerMakeup") != "" || PlayerPrefs.GetString("PlayerMakeup") != null) &&
+            (PlayerPrefs.GetString("PlayerDress") != "" || PlayerPrefs.GetString("PlayerDress") != null))
+            {
+                nextBtn.onClick.Invoke();
+            }
+            else popUpPanel.SetActive(true);
         });
 
         if (pauseBtn && pauseScreen) pauseBtn.onClick.AddListener(delegate () {
