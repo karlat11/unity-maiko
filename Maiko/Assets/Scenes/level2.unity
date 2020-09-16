@@ -12557,7 +12557,7 @@ MonoBehaviour:
   waypointPatrol: {fileID: 994349144}
   npcName: Samurai
   npcCopy: Aha! Gotcha!
-  npcImage: {fileID: 21300000, guid: 3313d88ada1727c40b21337df09af7a6, type: 3}
+  npcImage: {fileID: 21300000, guid: d6f0858d4db8387458d8716fb91ec1fa, type: 3}
 --- !u!195 &814370666
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -21571,7 +21571,7 @@ MonoBehaviour:
   waypointPatrol: {fileID: 1737575573}
   npcName: Samurai
   npcCopy: Aha! Gotcha!
-  npcImage: {fileID: 21300000, guid: 3313d88ada1727c40b21337df09af7a6, type: 3}
+  npcImage: {fileID: 21300000, guid: d6f0858d4db8387458d8716fb91ec1fa, type: 3}
 --- !u!114 &1370339950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24298,7 +24298,7 @@ MonoBehaviour:
   waypointPatrol: {fileID: 867665508}
   npcName: Samurai
   npcCopy: Aha! Gotcha!
-  npcImage: {fileID: 21300000, guid: 3313d88ada1727c40b21337df09af7a6, type: 3}
+  npcImage: {fileID: 21300000, guid: d6f0858d4db8387458d8716fb91ec1fa, type: 3}
 --- !u!195 &1387737828
 NavMeshAgent:
   m_ObjectHideFlags: 0
