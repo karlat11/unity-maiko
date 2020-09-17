@@ -15,6 +15,9 @@ public class playerControlManager : MonoBehaviour
     public GameObject popUpPanel;
     public GameObject interactibleCont;
 
+    [SerializeField]
+    private GameObject clickMarker;
+
     private GameObject targetInteractible = null;
     private NavMeshAgent agent;
     private Animator animator;
@@ -30,6 +33,7 @@ public class playerControlManager : MonoBehaviour
     {
         interactibles = new GameObject[interactibleCont.transform.childCount];
         for (int i = 0; i < interactibles.Length; i++) interactibles[i] = interactibleCont.transform.GetChild(i).gameObject;
+        clickMarker.SetActive(false);
     }
 
     private void Start()
@@ -71,6 +75,9 @@ public class playerControlManager : MonoBehaviour
                 {
                     agent.stoppingDistance = 0.1f;
                 }
+
+                clickMarker.SetActive(true);
+                clickMarker.transform.position = hit.point;
             }
         }
         
@@ -99,6 +106,9 @@ public class playerControlManager : MonoBehaviour
                 {
                     agent.stoppingDistance = 0.1f;
                 }
+
+                clickMarker.SetActive(true);
+                clickMarker.transform.position = hit.point;
             }
         }
 
@@ -107,6 +117,8 @@ public class playerControlManager : MonoBehaviour
             (!agent.hasPath || agent.velocity.sqrMagnitude == 0f) &&
             !detected)
         {
+            clickMarker.SetActive(false);
+
             switch (isInteractible)
             {
                 case true:
