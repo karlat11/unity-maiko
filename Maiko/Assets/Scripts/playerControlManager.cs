@@ -14,10 +14,11 @@ public class playerControlManager : MonoBehaviour
     public Transform enemyToFace;
     public GameObject popUpPanel;
     public GameObject interactibleCont;
+    public gameplayManager gameManager;
+    public GameObject clickMarker;
 
-    [SerializeField]
-    private GameObject clickMarker;
-
+    [SerializeField] private string secondPopUpName, secondPopUpCopy;
+    [SerializeField] private Sprite secondPopUpImg;
     private GameObject targetInteractible = null;
     private NavMeshAgent agent;
     private Animator animator;
@@ -34,6 +35,15 @@ public class playerControlManager : MonoBehaviour
         interactibles = new GameObject[interactibleCont.transform.childCount];
         for (int i = 0; i < interactibles.Length; i++) interactibles[i] = interactibleCont.transform.GetChild(i).gameObject;
         clickMarker.SetActive(false);
+
+        if (gameManager.isOnboardingLevel)
+        {
+            for (int j = 0; j < interactibles.Length; j++)
+            {
+                if (j == 0) interactibles[j].SetActive(true);
+                else interactibles[j].SetActive(false);
+            }
+        }
     }
 
     private void Start()
@@ -155,9 +165,26 @@ public class playerControlManager : MonoBehaviour
 
     void collectInteractible()
     {
-        if (!startedAnimTransition && !state.IsName("collect")) animator.Play("Base Layer.collect");
+        if (!gameManager.isOnboardingLevel)
+        {
+            if (!startedAnimTransition && !state.IsName("collect")) animator.Play("Base Layer.collect");
 
-        if (startedAnimTransition && !state.IsName("collect"))
+            if (startedAnimTransition && !state.IsName("collect"))
+            {
+                foreach (GameObject child in interactibles)
+                {
+                    if (child == targetInteractible)
+                    {
+                        child.SetActive(false);
+                        targetInteractible = null;
+                        isInteractible = false;
+                        npcPanelManager.scoreIncreased = true;
+                    }
+                }
+            }
+        }
+
+        else
         {
             foreach (GameObject child in interactibles)
             {
@@ -167,6 +194,8 @@ public class playerControlManager : MonoBehaviour
                     targetInteractible = null;
                     isInteractible = false;
                     npcPanelManager.scoreIncreased = true;
+                    if (child.transform.GetSiblingIndex() < interactibles.Length-1) interactibles[child.transform.GetSiblingIndex() + 1].SetActive(true);
+                    if (child.transform.GetSiblingIndex() == 0) npcPanelManager.UpdateDetection(secondPopUpName, secondPopUpCopy, secondPopUpImg);
                 }
             }
         }
