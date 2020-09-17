@@ -2158,8 +2158,8 @@ MonoBehaviour:
     girls as new members of her group and provides them with trainings for Geisha,
     assassins and Miko (priestesses) to ensure their good cover and easy access to
     most spaces and events.
-  levelName: level1_screen
-  levelImage: {fileID: 21300000, guid: 3d4399ebdf02d804f941ff0f18407a6b, type: 3}
+  levelName: level2
+  levelImage: {fileID: 21300000, guid: 07736a43287a62f4897288fd3377bb82, type: 3}
 --- !u!1 &1078531084
 GameObject:
   m_ObjectHideFlags: 0
@@ -2374,8 +2374,8 @@ MonoBehaviour:
     Chiyome. Suffering great loses, the feudal lord Takeda Shingen approaches widowed
     Chiyome and tasks her with the mission of creating an underground kunoichi (female
     ninja) network to serve as spies and espionage agents.
-  levelName: level2
-  levelImage: {fileID: 21300000, guid: 07736a43287a62f4897288fd3377bb82, type: 3}
+  levelName: level_onboarding_1
+  levelImage: {fileID: 21300000, guid: 3d4399ebdf02d804f941ff0f18407a6b, type: 3}
 --- !u!1 &1176291206
 GameObject:
   m_ObjectHideFlags: 0
