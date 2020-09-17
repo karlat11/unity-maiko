@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class levelSelectionManager : MonoBehaviour
 {
     public GameObject btns;
+    public GameObject completedText;
     public TextMeshProUGUI briefing;
     public Image levelImg;
     
@@ -17,7 +18,14 @@ public class levelSelectionManager : MonoBehaviour
         Time.timeScale = 1f;
         uiManag = GetComponent<UIManager>();
         levelBtns = btns.GetComponentsInChildren<Button>();
-        levelsUnlocked = 1;
+        if (PlayerPrefs.GetInt("lvlsUnlocked") == 0)
+        {
+            PlayerPrefs.SetInt("lvlsUnlocked", 1);
+            levelsUnlocked = 1;
+        }
+        else levelsUnlocked = PlayerPrefs.GetInt("lvlsUnlocked");
+
+        completedText.SetActive(false);
 
         if (levelBtns != null && levelBtns.Length != 0)
         {
@@ -39,7 +47,7 @@ public class levelSelectionManager : MonoBehaviour
                 briefingCreator bCreator = btn.GetComponentInChildren<briefingCreator>();
 
                 btn.onClick.AddListener(delegate () {
-                    changeSelectedLvl(btn, bCreator.sentences, bCreator.levelImage);
+                    changeSelectedLvl(btn, bCreator.sentences, bCreator.levelImage, bCreator.levelName);
                     uiManag.levelId = bCreator.levelName;
                 });
 
@@ -57,11 +65,13 @@ public class levelSelectionManager : MonoBehaviour
         img.enabled = unlocked ? false : true;
     }
 
-    void changeSelectedLvl(Button btn, string[] copy, Sprite img)
+    void changeSelectedLvl(Button btn, string[] copy, Sprite img, string lvlName)
     {
         foreach (Button child in levelBtns) child.interactable = true;
         btn.interactable = false;
         briefing.text = copy[0];
         levelImg.sprite = img;
+        if (PlayerPrefs.GetString(lvlName + "_completed") != null && PlayerPrefs.GetString(lvlName + "_completed") != "") completedText.SetActive(true);
+        else completedText.SetActive(false);
     }
 }

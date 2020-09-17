@@ -103,6 +103,13 @@ public class npcPanelManager : MonoBehaviour
         endPanelTitle.text = "Woo Hoo!";
         endPanelCopy.text = "You did it! You have collected all the secret documents needed and completed the mission undetected!";
         endPanelCompleteBtn.onClick.AddListener(delegate () {
+            if (PlayerPrefs.GetString(SceneManager.GetActiveScene().name + "_completed") == null ||
+            PlayerPrefs.GetString(SceneManager.GetActiveScene().name + "_completed") == "")
+            {
+                PlayerPrefs.SetInt("lvlsUnlocked", PlayerPrefs.GetInt("lvlsUnlocked") + 1);
+            }
+
+            PlayerPrefs.SetString(SceneManager.GetActiveScene().name + "_completed", "true");
             SceneManager.LoadScene("levelSelection_screen");
         });
         popUpPanel.SetActive(true);
