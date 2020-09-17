@@ -65,6 +65,7 @@ public class playerControlManager : MonoBehaviour
                 agent.angularSpeed = 700f;
                 sneaking = false;
                 isInteractible = checkForInteracible(hit.collider.gameObject);
+                startedAnimTransition = false;
 
                 if (isInteractible)
                 {
@@ -97,6 +98,7 @@ public class playerControlManager : MonoBehaviour
                 agent.angularSpeed = 700f;
                 sneaking = true;
                 isInteractible = checkForInteracible(hit.collider.gameObject);
+                startedAnimTransition = false;
 
                 if (isInteractible)
                 {
