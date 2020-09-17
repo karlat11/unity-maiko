@@ -77,7 +77,7 @@ public class playerControlManager : MonoBehaviour
                 }
 
                 clickMarker.SetActive(true);
-                clickMarker.transform.position = hit.point;
+                clickMarker.transform.position = new Vector3(hit.point.x, clickMarker.transform.position.y, hit.point.z);
             }
         }
         
@@ -108,7 +108,7 @@ public class playerControlManager : MonoBehaviour
                 }
 
                 clickMarker.SetActive(true);
-                clickMarker.transform.position = hit.point;
+                clickMarker.transform.position = new Vector3(hit.point.x, clickMarker.transform.position.y, hit.point.z);
             }
         }
 
