@@ -10,7 +10,7 @@ public class npcPanelManager : MonoBehaviour
     public static bool scoreIncreased = false;
     public GameObject popUpPanel;
     public TextMeshProUGUI scoreCounter;
-    public string customBriefing;
+    public string customBriefing, customEndTitle, customEndCopy;
 
     private static TextMeshProUGUI copy;
     private static TextMeshProUGUI npcName;
@@ -100,8 +100,8 @@ public class npcPanelManager : MonoBehaviour
 
     private void updatePopUp()
     {
-        endPanelTitle.text = "Woo Hoo!";
-        endPanelCopy.text = "You did it! You have collected all the secret documents needed and completed the mission undetected!";
+        endPanelTitle.text = (customEndTitle != null && customEndTitle != "") ? customEndTitle : "Woo Hoo!";
+        endPanelCopy.text = (customEndCopy != null && customEndCopy != "") ? customEndCopy : "You did it! You have collected all the secret documents needed and completed the mission undetected!";
         endPanelCompleteBtn.onClick.AddListener(delegate () {
             if (PlayerPrefs.GetString(SceneManager.GetActiveScene().name + "_completed") == null ||
             PlayerPrefs.GetString(SceneManager.GetActiveScene().name + "_completed") == "")
