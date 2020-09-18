@@ -9836,8 +9836,6 @@ MonoBehaviour:
     always complete a mission undetected. Samurai will catch you if they see you
     - always stay away from them. You will however be able to sneak past there foxes.
     Just remember to stay quiet!'
-  customEndTitle: 
-  customEndCopy: 
 --- !u!1 &890075965
 GameObject:
   m_ObjectHideFlags: 0
