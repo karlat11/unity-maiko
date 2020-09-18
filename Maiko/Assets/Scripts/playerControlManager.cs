@@ -16,6 +16,7 @@ public class playerControlManager : MonoBehaviour
     public GameObject interactibleCont;
     public gameplayManager gameManager;
     public GameObject clickMarker;
+    public int secondPopUpCollecibleIdx;
 
     [SerializeField] private string secondPopUpName, secondPopUpCopy;
     [SerializeField] private Sprite secondPopUpImg;
@@ -195,7 +196,7 @@ public class playerControlManager : MonoBehaviour
                     isInteractible = false;
                     npcPanelManager.scoreIncreased = true;
                     if (child.transform.GetSiblingIndex() < interactibles.Length-1) interactibles[child.transform.GetSiblingIndex() + 1].SetActive(true);
-                    if (child.transform.GetSiblingIndex() == 0) npcPanelManager.UpdateDetection(secondPopUpName, secondPopUpCopy, secondPopUpImg);
+                    if (child.transform.GetSiblingIndex() == secondPopUpCollecibleIdx) npcPanelManager.UpdateDetection(secondPopUpName, secondPopUpCopy, secondPopUpImg);
                 }
             }
         }
