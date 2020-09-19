@@ -7,6 +7,7 @@ public class levelSelectionManager : MonoBehaviour
     public GameObject btns;
     public GameObject completedText;
     public TextMeshProUGUI briefing;
+    public TextMeshProUGUI missionTitle;
     public Image levelImg;
     
     private int levelsUnlocked;
@@ -47,7 +48,7 @@ public class levelSelectionManager : MonoBehaviour
                 briefingCreator bCreator = btn.GetComponentInChildren<briefingCreator>();
 
                 btn.onClick.AddListener(delegate () {
-                    changeSelectedLvl(btn, bCreator.sentences, bCreator.levelImage, bCreator.levelName);
+                    changeSelectedLvl(btn, bCreator.sentences, bCreator.levelImage, bCreator.levelName, bCreator.missionName);
                     uiManag.levelId = bCreator.levelName;
                 });
 
@@ -65,7 +66,7 @@ public class levelSelectionManager : MonoBehaviour
         img.enabled = unlocked ? false : true;
     }
 
-    void changeSelectedLvl(Button btn, string[] copy, Sprite img, string lvlName)
+    void changeSelectedLvl(Button btn, string[] copy, Sprite img, string lvlName, string missionName)
     {
         foreach (Button child in levelBtns)
         {
@@ -76,6 +77,7 @@ public class levelSelectionManager : MonoBehaviour
 
         btn.interactable = false;
         briefing.text = copy[0];
+        missionTitle.text = missionName;
         levelImg.sprite = img;
         if (PlayerPrefs.GetString(lvlName + "_completed") != null && PlayerPrefs.GetString(lvlName + "_completed") != "") completedText.SetActive(true);
         else completedText.SetActive(false);

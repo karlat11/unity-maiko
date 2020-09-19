@@ -1320,8 +1320,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1021, y: 103.6}
-  m_SizeDelta: {x: 798.698, y: 107.19592}
+  m_AnchoredPosition: {x: 1021, y: 106}
+  m_SizeDelta: {x: 798.698, y: 152.6836}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &338127383
 MonoBehaviour:
@@ -1381,7 +1381,7 @@ MonoBehaviour:
   m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 52.73
+  m_lineSpacing: -13.5
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -1502,6 +1502,7 @@ MonoBehaviour:
     clan\u2019s capital fortress Odawara. All the clan needs now is intel on the
     fortress..."
   levelName: level2
+  missionName: Siege of Odawara
   levelImage: {fileID: 21300000, guid: 07736a43287a62f4897288fd3377bb82, type: 3}
 --- !u!114 &350077515
 MonoBehaviour:
@@ -1618,6 +1619,7 @@ MonoBehaviour:
   btns: {fileID: 624258945}
   completedText: {fileID: 42458382}
   briefing: {fileID: 13959869}
+  missionTitle: {fileID: 338127383}
   levelImg: {fileID: 1176291208}
 --- !u!4 &385866477
 Transform:
@@ -2028,6 +2030,7 @@ MonoBehaviour:
     and Minowa Castle. Kunoichi task is to gather information on the weak spots of
     both."
   levelName: level_garden
+  missionName: Uesugi conflict
   levelImage: {fileID: 21300000, guid: 3d4399ebdf02d804f941ff0f18407a6b, type: 3}
 --- !u!114 &507156910
 MonoBehaviour:
@@ -2460,6 +2463,7 @@ MonoBehaviour:
     unclear, however they should be well guarded - that should make them easy to
     spot.
   levelName: level_labirynth
+  missionName: Erikae and the great Suruga Invasion
   levelImage: {fileID: 21300000, guid: ca93d31099214a844bc7885d78acae3b, type: 3}
 --- !u!114 &725479341
 MonoBehaviour:
@@ -3320,6 +3324,7 @@ MonoBehaviour:
     assassins and Miko (priestesses) to ensure their good cover and easy access to
     most spaces and events.
   levelName: level_onboarding_2
+  missionName: Ninja training
   levelImage: {fileID: 21300000, guid: 9678df0c23fbc014db785e47560453f2, type: 3}
 --- !u!1 &1078531084
 GameObject:
@@ -3536,6 +3541,7 @@ MonoBehaviour:
     Chiyome and tasks her with the mission of creating an underground kunoichi (female
     ninja) network to serve as spies and espionage agents.
   levelName: level_onboarding_1
+  missionName: First steps
   levelImage: {fileID: 21300000, guid: bcfc1b24b75129d4da09182df4f68d91, type: 3}
 --- !u!1 &1164098383
 GameObject:
@@ -3729,7 +3735,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1021, y: 332.50003}
+  m_AnchoredPosition: {x: 1021, y: 369}
   m_SizeDelta: {x: 406, y: 145}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1176291208
@@ -4125,6 +4131,7 @@ MonoBehaviour:
     a celebratory event to raise everyone\u2019s morale. This should make it easy
     for a Maiko to join without suspicion."
   levelName: level_dressingroom
+  missionName: The beginning of Suruga Invasion
   levelImage: {fileID: 21300000, guid: a68edd1e98095fc4ba03d187faee4ba3, type: 3}
 --- !u!114 &1386188323
 MonoBehaviour:
@@ -4340,6 +4347,7 @@ MonoBehaviour:
     task. A secret informer confirmed that Hojo Ujiyasu uses his beautiful gardens
     to hide his documents - this might be a good place to start."
   levelName: level_geishagarden
+  missionName: Takeda-Hojo alliance
   levelImage: {fileID: 21300000, guid: 3d4399ebdf02d804f941ff0f18407a6b, type: 3}
 --- !u!114 &1472777179
 MonoBehaviour:
@@ -4633,6 +4641,7 @@ MonoBehaviour:
     their training before starting solo missions. There\u2019s just one final test
     before that happens\u2026"
   levelName: level_onboarding_3
+  missionName: The first espionage lesson
   levelImage: {fileID: 21300000, guid: c22f237a7158ecc4c8201d0609ff9687, type: 3}
 --- !u!1 &1629932763
 GameObject:
