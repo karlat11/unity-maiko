@@ -11615,8 +11615,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popUpPanel: {fileID: 1535545731}
   customEndTitle: Woo Hoo!
-  customEndCopy: You have completed you ninja test! Well done! Now, let's work on
-    your espionage skills next...
+  customEndCopy: You have just completed your training missions! Well done! Now it's
+    time for some practice.
 --- !u!1 &1234007538
 GameObject:
   m_ObjectHideFlags: 0
