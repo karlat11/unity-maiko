@@ -18,9 +18,30 @@ EditorBuildSettings:
     path: Assets/Scenes/levelSelection_screen.unity
     guid: c272aac0219b98c45917a6c61778438e
   - enabled: 1
-    path: Assets/Scenes/level1_screen.unity
-    guid: 933b2b7cc889eb3479044b5fc779447d
+    path: Assets/Scenes/level_onboarding_1.unity
+    guid: 5418e5ecc09df1d42a2ae962c5c22de8
+  - enabled: 1
+    path: Assets/Scenes/level_onboarding_2.unity
+    guid: 9f0c4ad8e3c6f724d9517a2ca2ad080d
+  - enabled: 1
+    path: Assets/Scenes/level_onboarding_3.unity
+    guid: a48a3d3f9f87d134db394c1ac5f94370
+  - enabled: 1
+    path: Assets/Scenes/level_dressingroom.unity
+    guid: 148c0f8a20e08af42ae320603c382cfc
+  - enabled: 1
+    path: Assets/Scenes/level_geishagarden.unity
+    guid: 056a2dd632d4b6744b6ae896ad2020f8
+  - enabled: 1
+    path: Assets/Scenes/level_garden.unity
+    guid: 0108c0469f3edb74b93cabe6fe7df024
   - enabled: 1
     path: Assets/Scenes/level2.unity
     guid: 370a56db8f2f2324ba829b260efc11ed
+  - enabled: 1
+    path: Assets/Scenes/level_labirynth.unity
+    guid: 0d7a627b0a8e09048afe7cceb58ac076
+  - enabled: 1
+    path: Assets/Scenes/level1_screen.unity
+    guid: 933b2b7cc889eb3479044b5fc779447d
   m_configObjects: {}
