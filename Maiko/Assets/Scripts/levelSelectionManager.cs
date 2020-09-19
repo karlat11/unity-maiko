@@ -67,7 +67,13 @@ public class levelSelectionManager : MonoBehaviour
 
     void changeSelectedLvl(Button btn, string[] copy, Sprite img, string lvlName)
     {
-        foreach (Button child in levelBtns) child.interactable = true;
+        foreach (Button child in levelBtns)
+        {
+            Image[] images = child.GetComponentsInChildren<Image>();
+            foreach (Image image in images) 
+                if (image.tag == "Locked" && image.enabled == false) child.interactable = true;
+        }
+
         btn.interactable = false;
         briefing.text = copy[0];
         levelImg.sprite = img;
