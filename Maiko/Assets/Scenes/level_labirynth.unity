@@ -15839,7 +15839,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popUpPanel: {fileID: 1535545731}
   customEndTitle: 
-  customEndCopy: 
+  customEndCopy: You have completed all missions and helped Takeda invade Suruga
+    proving yourself worth Erikae - now you have completed you Maiko training and
+    become Kunoichi Geisha! Well done!
 --- !u!1 &1234007538
 GameObject:
   m_ObjectHideFlags: 0
@@ -24729,10 +24731,10 @@ Transform:
   - {fileID: 1370339946}
   - {fileID: 263132571}
   - {fileID: 526959413}
-  - {fileID: 217416643}
   - {fileID: 148198926}
-  - {fileID: 1121510226}
+  - {fileID: 217416643}
   - {fileID: 256274799}
+  - {fileID: 1121510226}
   - {fileID: 11962390}
   - {fileID: 98315565}
   - {fileID: 1213505686}
