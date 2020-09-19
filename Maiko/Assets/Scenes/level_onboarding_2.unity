@@ -357,8 +357,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000022888, y: 945.75}
-  m_SizeDelta: {x: 500.93433, y: 104.53174}
+  m_AnchoredPosition: {x: 0.000045776, y: 945.75}
+  m_SizeDelta: {x: 790.2656, y: 104.53174}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &142171496
 MonoBehaviour:
@@ -379,7 +379,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Mission 1
+  m_text: Ninja training
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e1917bd68ae7fa942bf907ac238a3f88, type: 2}
   m_sharedMaterial: {fileID: 4580069572969009910, guid: e1917bd68ae7fa942bf907ac238a3f88,
@@ -449,7 +449,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -0.00048828125, w: 0}
   m_textInfo:
     textComponent: {fileID: 142171496}
-    characterCount: 9
+    characterCount: 14
     spriteCount: 0
     spaceCount: 1
     wordCount: 2
@@ -12674,8 +12674,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 945.75}
-  m_SizeDelta: {x: 615, y: 149}
+  m_AnchoredPosition: {x: -0.000048637, y: 945.75}
+  m_SizeDelta: {x: 863.0398, y: 149}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1485243015
 MonoBehaviour:
