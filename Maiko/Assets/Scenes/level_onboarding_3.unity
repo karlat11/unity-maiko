@@ -1616,7 +1616,7 @@ MonoBehaviour:
   pauseScreen: {fileID: 7107749048157748855}
   npcPanel: {fileID: 868708776}
   referencePanel: {fileID: 0}
-  levelId: level2
+  levelId: level_onboarding_3
 --- !u!114 &385866479
 MonoBehaviour:
   m_ObjectHideFlags: 0

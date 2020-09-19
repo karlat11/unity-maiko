@@ -13733,7 +13733,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7500d9c92f68f24ab57f86a5be8906a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customBriefing: ', you need to steal the secret documents from here!'
+  customBriefing: ', the war has started. Gain intel on Odawara to help make the
+    siege successful!'
 --- !u!1 &872859585
 GameObject:
   m_ObjectHideFlags: 0
@@ -26340,7 +26341,7 @@ PrefabInstance:
     - target: {fileID: 7107749047235606630, guid: 1ac769abd50a6614a8e3e904cd42a188,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: 
+      value: level2
       objectReference: {fileID: 0}
     - target: {fileID: 7107749047461600832, guid: 1ac769abd50a6614a8e3e904cd42a188,
         type: 3}
