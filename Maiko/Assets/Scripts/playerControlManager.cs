@@ -33,6 +33,7 @@ public class playerControlManager : MonoBehaviour
 
     private void Awake()
     {
+        UIManager.gamePaused = false;
         interactibles = new GameObject[interactibleCont.transform.childCount];
         for (int i = 0; i < interactibles.Length; i++) interactibles[i] = interactibleCont.transform.GetChild(i).gameObject;
         clickMarker.SetActive(false);
