@@ -53,7 +53,7 @@ public class levelSelectionManager : MonoBehaviour
                 });
 
                 //btn.onClick.Invoke();
-                if (i == 0) btn.onClick.Invoke();
+                if (unlocked) btn.onClick.Invoke();
 
                 i++;
             }
