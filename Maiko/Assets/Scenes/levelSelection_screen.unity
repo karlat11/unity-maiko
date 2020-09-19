@@ -1502,7 +1502,7 @@ MonoBehaviour:
     clan\u2019s capital fortress Odawara. All the clan needs now is intel on the
     fortress..."
   levelName: level2
-  levelImage: {fileID: 21300000, guid: 3d4399ebdf02d804f941ff0f18407a6b, type: 3}
+  levelImage: {fileID: 21300000, guid: 07736a43287a62f4897288fd3377bb82, type: 3}
 --- !u!114 &350077515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2460,7 +2460,7 @@ MonoBehaviour:
     unclear, however they should be well guarded - that should make them easy to
     spot.
   levelName: level_labirynth
-  levelImage: {fileID: 21300000, guid: 3d4399ebdf02d804f941ff0f18407a6b, type: 3}
+  levelImage: {fileID: 21300000, guid: ca93d31099214a844bc7885d78acae3b, type: 3}
 --- !u!114 &725479341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3320,7 +3320,7 @@ MonoBehaviour:
     assassins and Miko (priestesses) to ensure their good cover and easy access to
     most spaces and events.
   levelName: level_onboarding_2
-  levelImage: {fileID: 21300000, guid: 07736a43287a62f4897288fd3377bb82, type: 3}
+  levelImage: {fileID: 21300000, guid: 9678df0c23fbc014db785e47560453f2, type: 3}
 --- !u!1 &1078531084
 GameObject:
   m_ObjectHideFlags: 0
@@ -3536,7 +3536,7 @@ MonoBehaviour:
     Chiyome and tasks her with the mission of creating an underground kunoichi (female
     ninja) network to serve as spies and espionage agents.
   levelName: level_onboarding_1
-  levelImage: {fileID: 21300000, guid: 3d4399ebdf02d804f941ff0f18407a6b, type: 3}
+  levelImage: {fileID: 21300000, guid: bcfc1b24b75129d4da09182df4f68d91, type: 3}
 --- !u!1 &1164098383
 GameObject:
   m_ObjectHideFlags: 0
@@ -4125,7 +4125,7 @@ MonoBehaviour:
     a celebratory event to raise everyone\u2019s morale. This should make it easy
     for a Maiko to join without suspicion."
   levelName: level_dressingroom
-  levelImage: {fileID: 21300000, guid: 3d4399ebdf02d804f941ff0f18407a6b, type: 3}
+  levelImage: {fileID: 21300000, guid: a68edd1e98095fc4ba03d187faee4ba3, type: 3}
 --- !u!114 &1386188323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4633,7 +4633,7 @@ MonoBehaviour:
     their training before starting solo missions. There\u2019s just one final test
     before that happens\u2026"
   levelName: level_onboarding_3
-  levelImage: {fileID: 21300000, guid: 07736a43287a62f4897288fd3377bb82, type: 3}
+  levelImage: {fileID: 21300000, guid: c22f237a7158ecc4c8201d0609ff9687, type: 3}
 --- !u!1 &1629932763
 GameObject:
   m_ObjectHideFlags: 0
