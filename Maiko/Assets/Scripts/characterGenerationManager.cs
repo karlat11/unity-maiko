@@ -140,7 +140,8 @@ public class characterGenerationManager : MonoBehaviour
         });
 
         hairBtn.onClick.Invoke();
-        StartCoroutine(coroutine);
+        
+        if (!hairPopUpDisplayed) StartCoroutine(coroutine);
     }
 
     private void Update()
