@@ -35,6 +35,7 @@ public class clearCache : MonoBehaviour
 
         continueBtn.onClick.AddListener(delegate () {
             ClearSavedCache();
+            popUp.SetActive(false);
         });
     }
 
