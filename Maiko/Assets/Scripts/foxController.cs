@@ -71,7 +71,11 @@ public class foxController : MonoBehaviour
                 Debug.DrawRay(transform.position, direction, Color.red);
                 playerInSight = true;
             }
-            else Debug.DrawRay(transform.position, direction, Color.yellow);
+            else
+            {
+                playerInSight = false;
+                Debug.DrawRay(transform.position, direction, Color.yellow);
+            }
         }
         else Debug.DrawRay(transform.position, direction, Color.green);
     }
