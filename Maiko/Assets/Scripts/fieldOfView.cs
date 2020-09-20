@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class fieldOfView : MonoBehaviour
@@ -26,45 +24,12 @@ public class fieldOfView : MonoBehaviour
         viewMesh = new Mesh();
         viewMesh.name = "View Mesh";
         viewMeshFilter.mesh = viewMesh;
-
-        //StartCoroutine("FindTargetsWithDelay", .2f);
     }
 
     private void LateUpdate()
     {
         DrawFOV();
     }
-
-    /*IEnumerator FindTargetsWithDelay(float delay)
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(delay);
-            FindVisibleEnemies();
-        }
-    }*/
-
-    /*void FindVisibleEnemies()
-    {
-        visibleTargets.Clear();
-        Collider[] targetsInVisibleRad = Physics.OverlapSphere(transform.position, viewRad, targetMask);
-
-        for (int i = 0; i < targetsInVisibleRad.Length; i++)
-        {
-            Transform target = targetsInVisibleRad[i].transform;
-            Vector3 dirTarget = (target.position - transform.position).normalized;
-
-            if (Vector3.Angle(transform.forward, dirTarget) < viewAngle / 2)
-            {
-                float dstToTarget = Vector3.Distance(transform.position, target.position);
-
-                if (!Physics.Raycast (transform.position, dirTarget, dstToTarget, obstacleMask))
-                {
-                    visibleTargets.Add(target);
-                }
-            }
-        }
-    }*/
 
     void DrawFOV()
     {

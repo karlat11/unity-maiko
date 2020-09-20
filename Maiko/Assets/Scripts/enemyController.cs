@@ -15,7 +15,6 @@ public class enemyController : MonoBehaviour
     private bool targetVisible = false;
     private Animator animator;
     private NavMeshAgent agent;
-    /*private SphereCollider sphereCollider;*/
     private GameObject player;
     private bool playerInSight = false;
 
@@ -24,7 +23,6 @@ public class enemyController : MonoBehaviour
         wPoints = new Transform[waypointPatrol.transform.childCount];
         for (int i = 0; i < wPoints.Length; i++) wPoints[i] = waypointPatrol.transform.GetChild(i);
 
-        /*sphereCollider = GetComponent<SphereCollider>();*/
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -73,7 +71,6 @@ public class enemyController : MonoBehaviour
         if (angle < fov.viewAngle * 0.5f)
         {
             Physics.Raycast(transform.position, direction, out hit);
-            /*Debug.Log("Hit: " + hit.collider);*/
 
             if (hit.collider && hit.collider.gameObject == player && direction.magnitude < fov.viewRad)
             {
@@ -97,7 +94,6 @@ public class enemyController : MonoBehaviour
     {
         if (fov.visibleTargets != null && fov.visibleTargets.Count != 0)
         {
-            //Debug.Log("no targets");
             if (!targetVisible)
             {
                 if (animator != null) animator.Play("Base Layer.found");
@@ -120,7 +116,6 @@ public class enemyController : MonoBehaviour
 
         else
         {
-            //Debug.Log("targets");
             if (targetVisible)
             {
                 targetVisible = false;
@@ -136,74 +131,4 @@ public class enemyController : MonoBehaviour
             agent.isStopped = true;
         }
     }
-
-    /*private void OnTriggerStay(Collider other)
-    {
-
-        if (other.gameObject == player)
-        {
-            //Debug.Log("ontrigger player");
-            playerInSight = false;
-            fov.visibleTargets.Clear();
-            Vector3 direction = other.transform.position - transform.position;
-            float angle = Vector3.Angle(direction, transform.forward);
-
-            if (angle < 114.4 * 0.5f)
-            {
-                //Debug.Log("in angle");
-                fov.visibleTargets.Clear();
-                RaycastHit hit;
-                Debug.DrawRay(transform.position, direction, Color.red);
-                if (Physics.Raycast(transform.position, direction, out hit, sphereCollider.radius))
-                {
-                    Debug.Log("in ray + " + hit.collider.gameObject.name);
-                    if (hit.collider.gameObject == player)
-                    {
-                        //Debug.Log("its player");
-                        playerInSight = true;
-                        fov.visibleTargets.Add(player.transform);
-                    }
-                }
-            }
-        }
-    }*/
-
-    /*private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject == player)
-        {
-            //Debug.Log("still here player");
-            playerInSight = false;
-            Vector3 direction = other.transform.position - transform.position;
-            float angle = Vector3.Angle(direction, transform.forward);
-
-            if (angle < 114.4 * 0.5f)
-            {
-                //Debug.Log("in angle");
-                RaycastHit hit;
-                Debug.DrawRay(transform.position + transform.up, direction.normalized, Color.red, sphereCollider.radius);
-                if (Physics.Raycast(transform.position + transform.up, direction.normalized, out hit, sphereCollider.radius))
-                {
-                    Debug.Log("in ray " + hit.collider.gameObject.name);
-                    if (hit.collider.gameObject == player)
-                    {
-                        Debug.Log("its player");
-                        playerInSight = true;
-                        fov.visibleTargets.Add(player.transform);
-                    }
-
-                    else fov.visibleTargets.Clear();
-                }
-            }
-        }
-    }*/
-
-    /*private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject == player)
-        {
-            playerInSight = false;
-            fov.visibleTargets.Clear();
-        }
-    }*/
 }

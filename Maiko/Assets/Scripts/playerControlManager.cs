@@ -28,7 +28,6 @@ public class playerControlManager : MonoBehaviour
     private IEnumerator coroutine;
     private bool isInteractible = false;
     private bool startedAnimTransition = false;
-    //public LayerMask mask;
 
     EventSystem _event;
 
@@ -57,12 +56,9 @@ public class playerControlManager : MonoBehaviour
         detected = false;
 
         _event = EventSystem.current;
-        //mask = GetComponent<LayerMask>();
     }
     void Update()
     {
-        //Debug.Log("mask " + mask);
-        /*gameObject.layer = LayerMask.NameToLayer("Player");*/
         state = animator.GetCurrentAnimatorStateInfo(0);
 
         if (Input.GetMouseButtonDown(0) && 
