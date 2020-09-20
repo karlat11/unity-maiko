@@ -4865,8 +4865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customBriefing: ', have you noticed that the bushes in Hojo garden spell the word
-    ''Geisha''? While the Takeda and Hojo clans are not in war remember that they
-    are currently before an alliance. You cannot get caught!'
+    ''Geisha''?'
 --- !u!1 &890075965
 GameObject:
   m_ObjectHideFlags: 0
