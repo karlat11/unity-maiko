@@ -73,7 +73,7 @@ public class enemyController : MonoBehaviour
         if (angle < fov.viewAngle * 0.5f)
         {
             Physics.Raycast(transform.position, direction, out hit);
-            Debug.Log("Hit: " + hit.collider);
+            /*Debug.Log("Hit: " + hit.collider);*/
 
             if (hit.collider && hit.collider.gameObject == player && direction.magnitude < fov.viewRad)
             {
