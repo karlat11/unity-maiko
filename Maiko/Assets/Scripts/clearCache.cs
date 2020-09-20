@@ -12,7 +12,8 @@ public class clearCache : MonoBehaviour
     private void Awake()
     {
         btn = GetComponent<Button>();
-        Button[] children = btn.GetComponentsInChildren<Button>();
+
+        Button[] children = popUp.GetComponentsInChildren<Button>();
         foreach (Button child in children)
         {
             if (child.name == "close") closePopUpBtn = child;
