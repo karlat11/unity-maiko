@@ -9,11 +9,23 @@ public class foxController : MonoBehaviour
     private fieldOfView fov;
     private bool targetVisible = false;
     private Animator animator;
+    private GameObject player;
+    private bool playerInSight = false;
+
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
 
     private void Start()
     {
         fov = GetComponent<fieldOfView>();
         animator = GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        CheckForPlayer();
     }
 
     private void LateUpdate()
@@ -40,6 +52,35 @@ public class foxController : MonoBehaviour
                 if (animator != null) animator.Play("Base Layer.sleep");
                 if (playerControlManager.detected) playerControlManager.detected = false;
             }
+        }
+    }
+
+    private void CheckForPlayer()
+    {
+        Vector3 direction = player.transform.position - transform.position;
+        float angle = Vector3.Angle(direction, transform.forward);
+        RaycastHit hit;
+
+        if (angle < fov.viewAngle * 0.5f)
+        {
+            Physics.Raycast(transform.position, direction, out hit);
+            Debug.Log("Hit: " + hit.collider);
+
+            if (hit.collider && hit.collider.gameObject == player && direction.magnitude < fov.viewRad)
+            {
+                Debug.DrawRay(transform.position, direction, Color.red);
+                if (!playerInSight) fov.visibleTargets.Add(player.transform);
+                playerInSight = true;
+            }
+            else
+            {
+                Debug.DrawRay(transform.position, direction, Color.yellow);
+                fov.visibleTargets.Clear();
+            }
+        }
+        else
+        {
+            Debug.DrawRay(transform.position, direction, Color.green);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,7 +27,7 @@ public class fieldOfView : MonoBehaviour
         viewMesh.name = "View Mesh";
         viewMeshFilter.mesh = viewMesh;
 
-        StartCoroutine("FindTargetsWithDelay", .2f);
+        //StartCoroutine("FindTargetsWithDelay", .2f);
     }
 
     private void LateUpdate()
@@ -34,16 +35,16 @@ public class fieldOfView : MonoBehaviour
         DrawFOV();
     }
 
-    IEnumerator FindTargetsWithDelay(float delay)
+    /*IEnumerator FindTargetsWithDelay(float delay)
     {
         while (true)
         {
             yield return new WaitForSeconds(delay);
             FindVisibleEnemies();
         }
-    }
+    }*/
 
-    void FindVisibleEnemies()
+    /*void FindVisibleEnemies()
     {
         visibleTargets.Clear();
         Collider[] targetsInVisibleRad = Physics.OverlapSphere(transform.position, viewRad, targetMask);
@@ -63,7 +64,7 @@ public class fieldOfView : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
 
     void DrawFOV()
     {
