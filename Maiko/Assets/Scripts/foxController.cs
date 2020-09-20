@@ -30,16 +30,17 @@ public class foxController : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (fov.visibleTargets != null && fov.visibleTargets.Count != 0)
+        if (playerInSight)
         {
-            playerControlManager targetManager = fov.visibleTargets[0].GetComponent<playerControlManager>();
+            
+            playerControlManager targetManager = player.GetComponent<playerControlManager>();
             if (!targetManager.sneaking && !targetVisible)
             {
                 if (animator != null) animator.Play("Base Layer.wakeup");
                 targetVisible = true;
                 targetManager.enemyToFace = transform;
                 playerControlManager.detected = true;
-                transform.LookAt(fov.visibleTargets[0]);
+                transform.LookAt(player.transform);
                 npcPanelManager.UpdateDetection(npcName, npcCopy, npcImage);
             }
         }
@@ -64,23 +65,14 @@ public class foxController : MonoBehaviour
         if (angle < fov.viewAngle * 0.5f)
         {
             Physics.Raycast(transform.position, direction, out hit);
-            /*Debug.Log("Hit: " + hit.collider);*/
 
             if (hit.collider && hit.collider.gameObject == player && direction.magnitude < fov.viewRad)
             {
                 Debug.DrawRay(transform.position, direction, Color.red);
-                if (!playerInSight) fov.visibleTargets.Add(player.transform);
                 playerInSight = true;
             }
-            else
-            {
-                Debug.DrawRay(transform.position, direction, Color.yellow);
-                fov.visibleTargets.Clear();
-            }
+            else Debug.DrawRay(transform.position, direction, Color.yellow);
         }
-        else
-        {
-            Debug.DrawRay(transform.position, direction, Color.green);
-        }
+        else Debug.DrawRay(transform.position, direction, Color.green);
     }
 }
