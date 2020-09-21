@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Geisha
+  - Model
+  - Locked
+  - Copy
+  - npcName
+  - npcImage
+  - scoreCounter
+  - UI
+  - closeBtn
   layers:
   - Default
   - TransparentFX
@@ -13,10 +22,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Obstacles
+  - Enemies
+  - Collectables
   - 
   - 
   - 
